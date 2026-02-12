@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADSO3314566</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
         body {
             background: linear-gradient(black, red);
             color: white;
-            font-family: sans-serif;
+            font-family: "Bungee";
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,6 +37,39 @@
                 }
             }
         }
+
+        menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            a:link, a:visited {
+                background-color: #ffffff
+                color: #000000
+                border-radius: 12rem;
+                padding: 0.4rem;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                span {
+                  background-color: red;
+                  border-radius: 50%;
+                  front-size: 2rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 80px;
+                  width: 80px;
+                  
+                }
+                h4 {
+                    margin: 0;
+                }
+                small {
+
+                }
+                
+            }
+        }
     </style>
 </head>
 
@@ -46,6 +80,43 @@
     <h1> ADSO3314566</h1>
     <img src="bestia.jpg" alt="">
     <h4>Sebastian Cuartas</h4>
+    <menu>
+        <a href="01-emmet/">
+        <span>01</span>
+        <aside>
+            <h4>Emmet</h4>
+            <small>Work Flow - Markup & Styling</small>
+        </aside>
+     </a>
+
+     <a href="02-html/">
+        <span>02</span>
+        <aside>
+            <h4>html</h4>
+            <small>Structure - Hypertest Markup Lenguage</small>
+        </aside>
+     </a>
+
+     <a href="03-css">
+        <span>03</span>
+        <aside>
+            <h4>Css</h4>
+            <small>Look & Fell - Cascading Style Sheets</small>
+        </aside>
+
+     </a>
+
+     <a href="04-js/">
+        <span>04</span>
+        <aside>
+            <h4>Javascript</h4>
+            <small>Behavior - Programing Language</small>
+        </aside>
+     </a>
+
+
+        </menu>
+        
 </main>
 
 </html>
