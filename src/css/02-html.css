@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+body {
+    background-color: #000000;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'><rect fill='%23EC5928' width='1080' height='900'/><g fill-opacity='.1'><polygon fill='%23444' points='90 150 0 300 180 300'/><polygon points='90 150 180 0 0 0'/><polygon fill='%23AAA' points='270 150 360 0 180 0'/><polygon fill='%23DDD' points='450 150 360 300 540 300'/><polygon fill='%23999' points='450 150 540 0 360 0'/><polygon points='630 150 540 300 720 300'/><polygon fill='%23DDD' points='630 150 720 0 540 0'/><polygon fill='%23444' points='810 150 720 300 900 300'/><polygon fill='%23FFF' points='810 150 900 0 720 0'/><polygon fill='%23DDD' points='990 150 900 300 1080 300'/><polygon fill='%23444' points='990 150 1080 0 900 0'/></g></svg>");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    color: rgb(255,255,255);
+    font-family: "Bungee", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+            .btn-home {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 8px;
+            background: white;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+}
+
+
+
+main h1 {
+    font-size: 3.4rem;
+    text-align: center;
+    margin: 0;
+}
+
+main img {
+    border: 6px solid white;
+    border-radius: 50%;
+    height: 240px;
+    width: 240px;
+    display: block;
+    margin: 1rem auto;
+    object-fit: cover;
+}
+
+main h4 {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+
+
+menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+
+
+menu a:link,
+menu a:visited {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 12rem;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.4s ease-in;
+}
+
+menu a:hover {
+    transform: scale(1.01) translateX(12px);
+}
+
+
+
+menu span {
+    background-color: #ec5928;
+    border-radius: 50%;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 80px;
+    width: 80px;
+}
+
+
+
+menu h4 {
+    margin: 0;
+    text-align: left;
+    text-indent: 0.2rem;
+    width: 225px;
+}
+
+menu small {
+    display: block;
+    font-size: 0.7rem;
+    text-indent: 0.2rem;
+    width: 225px;
+}
+    
