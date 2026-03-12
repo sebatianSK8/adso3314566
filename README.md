@@ -16,7 +16,7 @@
 |04  | Javasacript |Behavior - Programing Languege        |
 
 
-![weid](https://adso3314566-pi.vercel.app/bestia.jpg)
+![weid](https://adso3314566-pi.vercel.app/public/imgs/photo.webp)
 
 [ADSO Files DRIVE](https://tinyurl.com/wnkk334u)
 
