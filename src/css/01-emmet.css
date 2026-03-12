@@ -28,6 +28,16 @@ main{
     align-items: center;
 }
 
+main img{
+    border: 6px solid white;
+    border-radius: 50%;
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+    display: block;
+    margin: 1rem auto;
+}
+
 section{
     background-color: #0006;
     border-radius: 0.4rem;
