@@ -16,7 +16,7 @@
 |04  | Javasacript |Behavior - Programing Languege        |
 
 
-![Sebastian](https://adso3314566-pi.vercel.app/public/imgs/photo.webp)
+![Sebastian](https://adso3314566-pi.vercel.app/imgs/photo.webp)
 
 [ADSO Files DRIVE](https://tinyurl.com/wnkk334u)
 
