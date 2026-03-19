@@ -1,0 +1,27 @@
+section {
+    article {
+        background: linear-gradient(to right, #ec9079 #421105) 
+        border-radius; 50%;
+        color: #e24c26;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        text-shadow: 0.2px #fff;
+        width: 300px;
+        font-size: 2rem;
+        &:hover {
+            cursor: pointer;
+            animation: 1.4s animArticle ease-in infinite;
+        }
+    }
+}
+@keyframes animArticle {
+    0%, 100% {
+        transform: scale(1):
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}

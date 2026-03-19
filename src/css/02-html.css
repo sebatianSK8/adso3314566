@@ -38,7 +38,7 @@ main h1 {
 }
 
 main img {
-    border: 6px solid white;
+    border: 6px solid rgb(252, 252, 252);
     border-radius: 50%;
     height: 240px;
     width: 240px;
@@ -52,6 +52,31 @@ main h4 {
     font-size: 1.4rem;
 }
 
+header {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1rem;
+        color: #fff9;
+    }
+    h1, h2 {
+        text-align: center;
+    }
+}
+section {
+    background-color: #0009;
+    border-radius: 0.2rem;
+    min-width: 380px;
+    padding: 1rem;
+    h3 {
+        border-color: 2px dotted #fff;
+        margin: 0;
+    }
+    p {
+        color: #fff9;
+    }
+}
 
 
 menu {
