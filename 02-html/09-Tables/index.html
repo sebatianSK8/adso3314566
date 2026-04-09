@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>09-Tables</title>
+    <link rel="stylesheet" href="/src/css/02-html.css">
+
+    <style>
+    body {  
+        background-color: #ffa861;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: block !important; 
+    }
+
+    header {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    header h1 {
+        color: #000000;
+        margin-bottom: 5px;
+    }
+
+    header h2 {
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    .btn-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .btn-home:hover {
+        background-color: #000000;
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        max-width: 800px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #00610d;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ffffff;
+    }
+    </style>
+</head>
+
+<body>
+
+
+<a href="../index.html" class="btn-home">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+    <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+  </svg>
+</a>
+
+
+<header>
+    <h1>09-Tables</h1>
+    <h2>Creates tables for data display.</h2>
+</header>
+
+
+<div class="table-container">
+<table>
+  <tr>
+    <th>Descripción</th>
+    <th>Mes</th>
+    <th>Costo</th>
+  </tr>
+  <tr>
+    <td>Agua</td>
+    <td>Enero</td>
+    <td>$3.000</td>
+  </tr>
+  <tr>
+    <td>Luz</td>
+    <td>Febrero</td>
+    <td>$5.500</td>
+  </tr>
+  <tr>
+    <td>Cable</td>
+    <td>Marzo</td>
+    <td>$16.100</td>
+  </tr>
+  <tr>
+    <td>Internet</td>
+    <td>Abril</td>
+    <td>$450</td>
+  </tr>
+</table>
+</div>
+
+</body>
+</html>

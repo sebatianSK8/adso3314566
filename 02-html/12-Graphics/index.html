@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>12-Graphics</title>
+<link rel="stylesheet" href="/src/css/02-html.css">
+
+<style>
+body {
+    background-color: #fff3e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: block !important;
+}
+
+
+.btn-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header h1 {
+    color: #000000;
+}
+
+header h2 {
+    color: #000000;
+}
+
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+canvas, svg {
+    margin: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+<path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+</svg>
+</a>
+
+<header>
+    <h1>12-Graphics</h1>
+    <h2>Creates inline graphics with tags.</h2>
+</header>
+
+<div class="contenedor">
+
+<h3>Canvas</h3>
+<canvas id="miCanvas" width="200" height="200" style="border:1px solid black;"></canvas>
+
+<h3>SVG</h3>
+<svg width="200" height="200" style="border:1px solid black;">
+    <circle cx="100" cy="100" r="50" fill="orange" stroke="black" stroke-width="2"/>
+</svg>
+
+</div>
+
+<script>
+const ctx = document.getElementById("miCanvas").getContext("2d");
+ctx.beginPath();
+ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+ctx.fillStyle = "orange";
+ctx.fill();
+ctx.stroke();
+</script>
+
+</body>
+</html>
