@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio</title>
+    <link rel="stylesheet" href="/src/css/02-html.css">
+
+    <style>
+    body {
+        background-color: #fff3e0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    
+    .btn-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+   
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        color: #000000;
+        margin-bottom: 5px;
+    }
+
+    header h2 {
+        color: #bf360c;
+    }
+
+   
+    .audio-box {
+        background-color: #ffe0b2;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+<path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+</svg>
+</a>
+
+<header>
+    <h1>13-Audio</h1>
+    <h2>Inserts audio files.</h2>
+</header>
+
+<div class="audio-box">
+    <audio controls>
+        <source src="sena.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+</body>
+</html>
