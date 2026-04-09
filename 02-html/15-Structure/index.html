@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>15-Structure</title>
+<link rel="stylesheet" href="/src/css/02-html.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: block !important;
+}
+
+/* 🔝 header centrado */
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* 🔙 botón */
+.btn-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* 📦 contenedor para centrar la tabla */
+.contenedor-tabla {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* 📊 tabla */
+.tabla {
+    display: table;
+    border-collapse: collapse;
+}
+
+/* filas */
+.fila {
+    display: table-row;
+}
+
+/* celdas */
+.celda {
+    display: table-cell;
+    border: 2px solid black;
+    padding: 40px; /* 🔥 más grande */
+    text-align: center;
+    width: 300px; /* 🔥 más ancho */
+}
+
+/* colores */
+.encabezado {
+    background-color: #ffffff;
+}
+
+.contenido {
+    background-color: #ffffff;
+}
+
+.pie {
+    background-color: #ffffff;
+}
+</style>
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+<path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+</svg>
+</a>
+
+<header>
+    <h1>15-Structure</h1>
+    <h2>Defines layout with non-semantic tags (old style).</h2>
+</header>
+
+<div class="contenedor-tabla">
+    <div class="tabla">
+
+        <div class="fila">
+            <div class="celda encabezado">
+                Encabezado
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="celda contenido">
+                Contenido
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="celda pie">
+                Pie de página
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

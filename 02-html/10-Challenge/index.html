@@ -2,63 +2,46 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>17-FinalChallenge</title>
+<title>10-Challenge</title>
 <link rel="stylesheet" href="/src/css/02-html.css">
 
 <style>
 body {
-    background-color: #2e2e2e;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: block !important;
-}
-
-header {
-    text-align: center;
-    margin-top: 20px;
-}
-
-header h1 {
-    color: #ffffff;
-}
-
-header h2 {
-    color: #cccccc;
-}
-
-.btn-home {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.table-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    background:#2e2e2e;
+    display:flex;
+    flex-direction:column; /* 👈 clave */
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse:collapse;
 }
 
 td {
-    width: 70px;
-    height: 70px;
-    border: 3px solid white;
-    text-align: center;
-    font-size: 25px;
+    width:70px;
+    height:70px;
+    border:3px solid #ccc;
+    text-align:center;
+    font-size:22px;
 }
 
-.black {
-    background-color: black;
+header h1 {
+    color:white;
+    text-align:center;
+    margin-bottom:20px;
 }
 
-.gray {
-    background-color: #888;
+.black { background:black; }
+.gray  { background:#555; }
+
+/* 👇 opcional: posición del botón home */
+.btn-home {
+    position:absolute;
+    top:20px;
+    left:20px;
 }
 </style>
 </head>
@@ -72,87 +55,92 @@ td {
 </a>
 
 <header>
-    <h1>17-FinalChallenge</h1>
-    <h2>Reto Final</h2>
+    <h1>10-Challenge</h1>
 </header>
 
-<div class="table-container">
 <table>
 
+<!-- FILA 1 -->
 <tr>
-    <td colspan="4" class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="4" class="gray"></td>
+  <td class="light" colspan="4"></td>
+  <td class="dark">😎</td>
+  <td class="light" colspan="3"></td>
 </tr>
 
+<!-- FILA 2 -->
 <tr>
-    <td colspan="3" class="gray"></td>
-    <td class="black">🛹</td>
-    <td rowspan="3" class="black">🛹</td>
-    <td class="black">🛹</td>
-    <td colspan="3" class="gray"></td>
+  <td class="light" colspan="3"></td>
+  <td class="dark">😎</td>
+  <td class="dark" rowspan="2">😎</td>
+  <td class="dark">😎</td>
+  <td class="light" colspan="2"></td>
 </tr>
 
+<!-- FILA 3 -->
 <tr>
-    <td colspan="2" class="gray"></td>
-    <td class="black">🛹</td>
-    <td class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="3" class="gray"></td>
+  <td class="light" colspan="2"></td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
+  <td class="dark">😎</td>
+  <td class="light" colspan="2"></td>
 </tr>
 
-<!-- 🔥 CORREGIDA -->
+<!-- FILA 4 -->
 <tr>
-    <td class="gray"></td>
-    <td class="black">🛹</td>
-    <td class="gray"></td>
-    <td colspan="3" class="black">🛹</td>
-    <td class="gray"></td>
-    <td class="black">🛹</td>
-    <td class="gray"></td>
+  <td class="light" colspan="2"></td>
+  <td class="dark">😎</td>
+  <td class="dark" colspan="3">😎</td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
 </tr>
 
-<!-- 🔥 CORREGIDA -->
+<!-- FILA 5 -->
 <tr>
-    <td class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="5" class="black">🛹</td>
-    <td class="black">🛹</td>
-    <td class="gray"></td>
+  <td class="light"></td>
+  <td class="dark">😎</td>
+  <td class="dark" colspan="4">😎</td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
 </tr>
 
+<!-- FILA 6 -->
 <tr>
-    <td colspan="2" class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="3" class="black">🛹</td>
-    <td class="black">🛹</td>
-    <td colspan="2" class="gray"></td>
+  <td class="light" colspan="2"></td>
+  <td class="light"></td>
+  <td class="dark">😎</td>
+  <td class="dark">😎</td>
+  <td class="dark">😎</td>
+  <td class="light" colspan="2"></td>
 </tr>
 
+<!-- FILA 7 -->
 <tr>
-    <td colspan="3" class="gray"></td>
-    <td class="black">🛹</td>
-    <td class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="3" class="gray"></td>
+  <td class="light" colspan="3"></td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
+  <td class="dark">😎</td>
+  <td class="light" colspan="2"></td>
 </tr>
 
+<!-- FILA 8 -->
 <tr>
-    <td colspan="4" class="gray"></td>
-    <td class="black">🛹</td>
-    <td class="black">🛹</td>
-    <td class="black">🛹</td>
-    <td colspan="2" class="gray"></td>
+  <td class="light" colspan="4"></td>
+  <td class="dark">😎</td>
+  <td class="dark">😎</td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
 </tr>
 
+<!-- FILA 9 -->
 <tr>
-    <td colspan="4" class="gray"></td>
-    <td class="black">🛹</td>
-    <td colspan="4" class="gray"></td>
+  <td class="light" colspan="4"></td>
+  <td class="light"></td>
+  <td class="dark">😎</td>
+  <td class="light"></td>
+  <td class="light"></td>
 </tr>
 
 </table>
-</div>
 
 </body>
 </html>
