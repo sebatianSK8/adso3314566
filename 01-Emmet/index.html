@@ -1,270 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-   <link rel="stylesheet" href="../src/css/01-emmet.css">
+<meta charset="UTF-8">
+<title>01-Emmet</title>
+<link rel="stylesheet" href="../src/css/01-emmet.css">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+/* 🔙 botón */
+.btn-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* 📄 contenedor */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 🧾 títulos */
+h1, h4 {
+    text-align: center;
+}
+
+/* 📦 secciones */
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 💻 código */
+xmp {
+    display: block;
+    background: #111;
+    color: #00ff88;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* 🔥 evita desbordamiento */
+    white-space: pre;
+    font-size: 13px;
+}
+
+/* 🖼 imagen centrada */
+img {
+    display: block;
+    margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
 <a href="../index.html" class="btn-home">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
-        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+<path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+</svg>
 </a>
 
-    <main>
-        <h1>01-Emmet</h1>
-        <img src="../src/imgs/logo-emmet.png.jpeg" alt="Emmet" width="240">
-        <h4>Work Flow - Markup & Styling</h4>
+<main>
+    <h1>01-Emmet</h1>
+    <img src="../src/imgs/logo-emmet.png.jpeg" alt="Emmet" width="240">
+    <h4>Work Flow - Markup & Styling</h4>
 
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>ul>li>a ↔️</p>
-            <h4>Result</h4>
-        
-
+    <!-- 🔥 EJEMPLO -->
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>ul>li>a ↔️</p>
+<h4>Result</h4>
 
 <ul>
     <li><a href=""></a></li>
 </ul>
 </xmp>
-        </section>
+    </section>
 
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>ul>li*3</p>
+<h4>Result</h4>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>section+header+nav</p>
-            <h4>Result</h4>
-        
-
-<section></section>
-<header></header>
-<nav></nav>  
-
-</xmp>
-        </section>
-
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>ul>li*3</p>
-            <h4>Result</h4>
-     
-            
 <ul>
     <li></li>
     <li></li>
     <li></li>
 </ul>
-
 </xmp>
-        </section>
+    </section>
 
-         <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>div.contenedor</p>
-            <h4>Result</h4>
-        
-
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>div.contenedor</p>
+<h4>Result</h4>
 
 <div class="contenedor"></div>
-
 </xmp>
-        </section>
+    </section>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>div.clase1.clase2.clasen</p>
-            <h4>Result</h4>
-        
-
-<div class="clase1 clase2 clasen"></div>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>nav#menu</p>
-            <h4>Result</h4>
-        
-
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>nav#menu</p>
+<h4>Result</h4>
 
 <nav id="menu"></nav>
 </xmp>
-        </section>
+    </section>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>div{Lorem Ipsum Dolor}</p>
-            <h4>Result</h4>
-        
-
-
-<div>Lorem Ipsum Dolor</div>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>a[href=www.google.com]</p>
-            <h4>Result</h4>
-        
-
-<a href="www.google.com"></a>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>ul>li.num$*3</p>
-            <h4>Result</h4>
-    
-            
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>ul>li.num$*3</p>
+<h4>Result</h4>
 
 <ul>
     <li class="num1"></li>
     <li class="num2"></li>
     <li class="num3"></li>
 </ul>
-
 </xmp>
-        </section>
+    </section>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>ul>li.num$@-*3</p>
-            <h4>Result</h4>
-        
+    <section>
+<xmp>
+<h2>Nesting ></h2>
+<h4>Example:</h4>
+<p>lorem20</p>
+<h4>Result</h4>
 
-
-<ul>
-    <li class="num3"></li>
-    <li class="num2"></li>
-    <li class="num1"></li>
-</ul>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>ul>li.num$@3*4</p>
-            <h4>Result</h4>
-       
-            
-
-<ul>
-    <li class="num3"></li>
-    <li class="num4"></li>
-    <li class="num5"></li>
-    <li class="num6"></li>
-</ul>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>section>article>div^p</p>
-            <h4>Result</h4>
-        
-<section>
-    <article>
-        <div></div>
-    </article>
-    <p></p>
-</section>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>(header>nav)(section>article)</p>
-            <h4>Result</h4>
-        
-
-<header></header>
-<nav></nav>
-<section></section>
-<article></article>
-
-</xmp>
-        </section>
-
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>lorem20</p>
-            <h4>Result</h4>
-        
 lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.
-
-
 </xmp>
-        </section>
+    </section>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>html:xs</p>
-            <h4>Result</h4>
-        
+    <section>
+<xmp>
+<h2>CHALLENGE</h2>
 
+<h4>Example:</h4>
+header#header>nav.navbar.navbar-inverse>.container>.navbar-header>button.navbar-toggle>span.icon-bar*3^^a.navbar-brand>img^^^.collapse>ul.nav.navbar-nav>li*4>a.link
 
-<html:xs></html:xs>
+<h4>Result:</h4>
 
+<header id="header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">
+                    <img src="imgs/logo.png" alt="">
+                </a>
+            </div>
+            <div class="collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="link">Inicio</a></li>
+                    <li><a class="link">Ingresar</a></li>
+                    <li><a class="link">Registrarse</a></li>
+                    <li><a class="link">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 </xmp>
-        </section>
+    </section>
 
-        <section>
-            <xmp> 
-            <h2>Nesting ></h2>
-            <h4>Example:</h4>
-            <p>meta:vp</p>
-            <h4>Result</h4>
-        
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</xmp>
-        </section>
-
-
+</main>
 
 </body>
 </html>
