@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Selectors</title>
+
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        section .rotate {
+            background: #d42727;
+            color: #fff;
+            margin: 3rem auto;
+            padding: 1rem;
+            text-align: center;
+            font-size: 3rem;
+            width: 180px;
+            border-radius: 12px;
+            transform: rotate(-0.1turn);
+            box-shadow: 0 10px 20px #000000;
+        }
+
+        ul.fruits {
+            list-style: none;
+            padding: 0;
+            max-width: 300px;
+            margin: 2rem auto;
+        }
+
+        ul.fruits li {
+            margin: 0.4rem 0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        ul.fruits li:nth-child(1) {
+            background: orange;
+            color: #000;
+        }
+
+        ul.fruits li:nth-child(2) {
+            background: rgb(207, 0, 0);
+            color: #000000;
+        }
+
+        ul.fruits li:nth-child(3) {
+            background: yellow;
+            color: #000;
+        }
+
+        header ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16Z"/>
+    </svg>
+</a>
+
+<main>
+
+    <header>
+        <h1>05 Basic Selectors</h1>
+        <ul>
+            <li>Children (>)</li>
+            <li>Adjacent / Sibling (+)</li>
+            <li>Attribute [class]</li>
+        </ul>
+    </header>
+
+    <section>
+        <ul class="fruits"> 
+            <li>🍊Orange</li>
+            <li>🍎Apple</li>
+            <li>🍋Lemon</li>
+        </ul>
+    </section>
+
+</main>
+
+</body>
+</html>

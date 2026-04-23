@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-basic-selectors</title>
+
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        section div.rotate {
+            background: #d42727;
+            color: #fff9;
+            margin: 4rem auto;
+            padding: 0.4rem;
+            text-align: center;
+            font-size: 4rem;
+            width: 200px;
+            transform: rotate(-0.1turn);
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="../index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+
+    <main>
+
+        <header>
+            <h1>04-basic-selectors</h1>
+        </header>
+
+        <section>
+            <h2>Basic CSS Selectors</h2>
+
+            <ul>
+                <li>Universal (*)</li>
+                <li>Type / Tag (p)</li>
+                <li>Descending (div p)</li>
+                <li>Class (.important)</li>
+                <li>ID (#cod389)</li>
+                <li>Merge (div#user3 p.title)</li>
+            </ul>
+
+            <div class="SENA rotate">
+                SENA
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
