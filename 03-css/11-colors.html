@@ -6,8 +6,52 @@
     <title>11-Colors</title>
     <link rel="stylesheet" href="/src/css/03-css.css">
     <style>
+        div.colors {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 2rem;
+            align-items: center;
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                div {
+                    color: black;
+                    height: 70px;
+                    width: 70px;
+                    transition: all 0.4s ease-in;
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.4);
+                    }
+                    &:first-child, &:last-child {
+                        color: white;
+                    }
+                    &.maroon {background-color: maroon;}
+                    &.red {background-color: red;}
+                    &.orange {background-color: orange;}
+                    &.yellow {background-color: yellow;}
+                    &.olive {background-color: olive;}
+                    
+                    &.purple {background-color: purple;}
+                    &.fuchsia {background-color: fuchsia;}
+                    &.white {background-color: white;}
+                    &.lime {background-color: lime;} 
+                    &.green {background-color: green;}
 
-</style>
+                    &.navy {background-color: navy;}
+                    &.blue {background-color: blue;}
+                    &.aqua {background-color: aqua;}
+                    &.teal {background-color: teal;}
+
+                    &.black {background-color: black;}
+                    &.silver {background-color: silver;}
+                    &.gray {background-color: gray;}
+                }
+            }
+        }
+    </style>
 </head>
 <body>
 <a href="../index.html" class="btn-home">
@@ -35,6 +79,24 @@
                 <div class="orange">orange</div>
                 <div class="yellow">yellow</div>
                 <div class="olive">olive</div>
+            </div>
+            <div>
+                <div class="purple">purple</div>
+                <div class="fuchsia">fuchsia</div>
+                <div class="white">white</div>
+                <div class="lime">lime</div>
+                <div class="green">green</div>
+            </div>
+            <div>
+                <div class="navy">navy</div>
+                <div class="blue">blue</div>
+                <div class="aqua">aqua</div>
+                <div class="teal">teal</div>
+            </div>
+            <div>
+                <div class="black">black</div>
+                <div class="silver">silver</div>
+                <div class="gray">gray</div>
             </div>
         </div>
     </section>
