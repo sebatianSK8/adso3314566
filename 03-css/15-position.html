@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15-Positions</title>
+
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#4b0082,#7900c9,#9b30ff);
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+main{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+header h2{
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* SECCIONES */
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+/* TITULOS */
+
+section h3{
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+/* CONTENEDORES */
+
+.container{
+    width: 700px;
+    height: 250px;
+    border: 4px solid white;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* CAJAS */
+
+.box{
+    width: 80px;
+    height: 80px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* POSICIONES */
+
+.relative{
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.absolute{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.fixed{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: yellow;
+    z-index: 1000; /* 🔥 importante */
+}
+
+.sticky{
+    position: sticky;
+    top: 10px;
+    background: cyan;
+}
+
+</style>
+</head>
+
+<body>
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<main>
+    <section>
+
+    
+
+<header>
+    <h1>CSS Positions</h1>
+    <h2>Ejemplos de position: relative, absolute, fixed y sticky</h2>
+</header>
+
+<section>
+    <div>
+        <h3>Normal/Stactic:</h3>
+        <div class="container">
+            <div class="box relative">S</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Relative</h3>
+        <div class="container">
+            <div class="box relative">R</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Absolute</h3>
+        <div class="container">
+            <div class="box absolute">A</div>
+            <div class="box relative">B</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Sticky</h3>
+        <div class="container">
+            <div class="box sticky">S</div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Fixed</h3>
+        <div class="container">
+        </div>
+    </div>
+
+</section>
+</section>
+</main>
+
+<!-- 🔥 FIXED FUERA DEL MAIN -->
+<div class="box fixed">F</div>
+
+</body>
+</html>

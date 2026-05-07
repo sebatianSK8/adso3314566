@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>17-visualization</title>
+
+<!-- MISMAS RUTAS -->
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+/* FORZAR HEADER ARRIBA */
+header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* evita que el layout externo lo mande a un lado */
+body {
+    display: block !important;
+}
+
+/* CONTENIDO */
+.container {
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 20px;
+}
+
+/* DISPLAY */
+.block {
+    display: block;
+    background: lightblue;
+    margin-bottom: 5px;
+}
+
+.inline {
+    display: inline;
+    background: lightgreen;
+}
+
+.none {
+    display: none;
+}
+
+/* FLEX */
+.flex {
+    display: flex;
+    gap: 10px;
+    background: lightcoral;
+    padding: 10px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: lightgoldenrodyellow;
+    padding: 10px;
+}
+
+/* VISIBILITY */
+.visible {
+    visibility: visible;
+    background: lightpink;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* OVERFLOW */
+.overflow-box {
+    width: 200px;
+    height: 80px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.overflow-visible { overflow: visible; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-auto { overflow: auto; }
+
+/* Z-INDEX */
+.z-container {
+    position: relative;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    color: white;
+}
+
+.z1 {
+    background: rgb(255, 251, 0);
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+}
+
+.z2 {
+    background: blue;
+    z-index: 2;
+    top: 30px;
+    left: 30px;
+}
+
+.z3 {
+    background: rgb(255, 0, 0);
+    z-index: 3;
+    top: 50px;
+    left: 50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>17-visualization</h1>
+</header>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<div class="container">
+
+    <h2>Display</h2>
+    <div class="block">Display: block</div>
+    <span class="inline">Display: inline</span>
+    <div class="none">No se muestra (display:none)</div>
+
+    <div class="flex">
+        <div>Flex 1</div>
+        <div>Flex 2</div>
+        <div>Flex 3</div>
+    </div>
+
+    <div class="grid">
+        <div>Grid 1</div>
+        <div>Grid 2</div>
+        <div>Grid 3</div>
+    </div>
+
+    <h2>Visibility</h2>
+    <div class="visible">Visible</div>
+    <div class="hidden">Oculto (pero ocupa espacio)</div>
+
+    <h2>Overflow</h2>
+
+    <div class="overflow-box overflow-visible">
+        overflow: visible Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <div class="overflow-box overflow-hidden">
+        overflow: hidden Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <div class="overflow-box overflow-scroll">
+        overflow: scroll Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <div class="overflow-box overflow-auto">
+        overflow: auto Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <h2>Z-Index</h2>
+
+    <div class="z-container">
+        <div class="box z1">1</div>
+        <div class="box z2">2</div>
+        <div class="box z3">3</div>
+    </div>
+
+</div>
+
+</body>
+</html>

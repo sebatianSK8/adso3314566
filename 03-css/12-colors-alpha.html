@@ -4,34 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12-colors-alpha</title>
-    <link rel="stylesheet" href="/src/css/03-css.css">
-    <style>
 
-</style>
+    <link rel="stylesheet" href="/src/css/03-css.css">
+
+    <style>
+        figure.tony {
+            background: url("imgs/tony\ hawk.png")
+                        no-repeat center / contain;
+            border: 4px solid #fff;
+            margin: 4rem auto;
+            height: 380px;
+            width: 380px;
+        }
+
+        .box1, .box2, .box3 {
+            width: 100%;
+            height: 33.3%;
+        }
+
+        .box1 {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .box2 {
+            background-color: #ffffff73;
+        }
+
+        .box3 {
+            background-color: hsla(0, 0%, 45%, 0.267);
+        }
+    </style>
 </head>
+
 <body>
+
 <a href="../index.html" class="btn-home">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
         <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
     </svg>
 </a>
-    </path>
-</a>
-</body>
-</html>
-</head>
-<body>
-    <main>
-        <header>
-        <h>12-colors-alpha</h>
+
+<main>
+    <header>
+        <h1>12-colors-alpha</h1>
         <h2>The fourth alpha channel allows you to apply opacity or transparency to the color.</h2>
     </header>
+
     <section>
+        <h3>Example Transparent Colors</h3>
+
+        <figure class="tony">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </figure>
 
     </section>
-    
 </main>
-    
-    
+
 </body>
 </html>

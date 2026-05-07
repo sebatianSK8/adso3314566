@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>13-box-model</title>
+
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #79009e;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-home {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    border: 2px solid #000000;
+    border-radius: 50%;
+    padding: 10px;
+
+    background: #ffffff71;
+
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+    .btn-home:hover {
+        background: #ffffff;
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+
+    .margin {
+        background: rgba(0, 150, 255, 0.15);
+        padding: 50px;
+        margin: 60px;
+        border-radius: 10px;
+    }
+    .border {
+        background: rgba(0, 255, 100, 0.15);
+        padding: 40px;
+        border: 6px solid #333;
+        border-radius: 8px;
+    }
+
+    .padding {
+        background: rgba(255, 200, 0, 0.2);
+        padding: 30px;
+        border-radius: 6px;
+    }
+
+    .content {
+        background: #663398;
+        color: #ffffff;
+        width: 260px;
+        height: 140px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .label {
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+</style>
+
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16Z"/>
+    </svg>
+</a>
+
+<h1>CSS Box Model</h1>
+
+<div class="margin">
+    <span class="label">MARGIN</span>
+
+    <div class="border">
+        <span class="label">BORDER</span>
+
+        <div class="padding">
+            <span class="label">PADDING</span>
+
+            <div class="content">
+                CONTENT <br> ADSO 3314566
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

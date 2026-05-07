@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14-background</title>
+
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #4b0082,
+        #7900c9,
+        #9b30ff
+    );
+
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* CONTENEDOR */
+
+main{
+    width: 95%;
+    max-width: 1100px;
+}
+
+/* TITULOS */
+
+header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+header h2{
+    font-size: 24px;
+    line-height: 1.8;
+    font-weight: normal;
+}
+
+/* SECTION */
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* SUBTITULOS */
+
+section h3{
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+/* CAJAS */
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6{
+
+    width: 500px;
+    height: 350px;
+
+    border: 5px solid white;
+    border-radius: 18px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+    transition: 0.4s;
+}
+
+/* EFECTO HOVER */
+
+.box1:hover,
+.box2:hover,
+.box3:hover,
+.box4:hover,
+.box5:hover,
+.box6:hover{
+
+    transform: scale(1.03);
+}
+
+/* background-color */
+
+.box1{
+    background-color: rgba(0, 195, 255, 0.7);
+}
+
+/* background-image */
+
+.box2{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+
+    background-repeat: repeat;
+}
+
+/* background-repeat */
+
+.box3{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+
+    background-repeat: no-repeat;
+}
+
+/* background-position */
+
+.box4{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* background-size */
+
+.box5{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* background-attachment */
+
+.box6{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* BOTON HOME */
+
+.btn-home{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.btn-home:hover{
+    transform: scale(1.1);
+}
+
+.btn-home svg{
+    fill: #000000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="../index.html" class="btn-home">
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 256 256">
+
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16Z"/>
+
+    </svg>
+
+</a>
+
+<main>
+
+    <header>
+
+        <h1>14-background</h1>
+
+        <h2>
+            • background-color<br>
+            • background-image<br>
+            • background-repeat<br>
+            • background-position<br>
+            • background-size<br>
+            • background-attachment
+        </h2>
+
+    </header>
+
+    <section>
+
+        <h3>Background Color</h3>
+        <div class="box1"></div>
+
+        <h3>Background Image</h3>
+        <div class="box2"></div>
+
+        <h3>Background Repeat</h3>
+        <div class="box3"></div>
+
+        <h3>Background Position</h3>
+        <div class="box4"></div>
+
+        <h3>Background Size</h3>
+        <div class="box5"></div>
+
+        <h3>Background Attachment</h3>
+        <div class="box6"></div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
