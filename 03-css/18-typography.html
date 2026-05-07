@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18-typography</title>
+
+<!-- MISMAS RUTAS -->
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+/* HEADER ARRIBA */
+header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* evitar conflictos con layout externo */
+body {
+    display: block !important;
+}
+
+/* CONTENEDOR */
+.container {
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px;
+}
+
+/* TYPOGRAPHY */
+
+/* COLOR */
+.color-text {
+    color: red;
+}
+
+/* FAMILY */
+.family-text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* SIZE */
+.size-small {
+    font-size: 12px;
+}
+
+.size-medium {
+    font-size: 18px;
+}
+
+.size-large {
+    font-size: 28px;
+}
+
+/* WEIGHT */
+.weight-light {
+    font-weight: 300;
+}
+
+.weight-normal {
+    font-weight: 400;
+}
+
+.weight-bold {
+    font-weight: 700;
+}
+
+</style>
+</head>
+
+<body>
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<header>
+    <h1>18-typography</h1>
+</header>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<div class="container">
+
+    <h2>Color</h2>
+    <p class="color-text">Este texto tiene color rojo</p>
+
+    <h2>Font Family</h2>
+    <p class="family-text">Este texto usa Arial, Helvetica, sans-serif</p>
+
+    <h2>Font Size</h2>
+    <p class="size-small">Texto pequeño (12px)</p>
+    <p class="size-medium">Texto mediano (18px)</p>
+    <p class="size-large">Texto grande (28px)</p>
+
+    <h2>Font Weight</h2>
+    <p class="weight-light">Peso ligero (300)</p>
+    <p class="weight-normal">Peso normal (400)</p>
+    <p class="weight-bold">Peso negrita (700)</p>
+
+</div>
+
+</body>
+</html>

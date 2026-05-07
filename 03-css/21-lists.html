@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21-lists</title>
+
+<!-- MISMAS RUTAS -->
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+/* HEADER ARRIBA */
+header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* evitar conflictos con layout externo */
+body {
+    display: block !important;
+}
+
+/* CONTENEDOR */
+.container {
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px;
+}
+
+/* LISTAS */
+
+/* shorthand completo: type + position + image */
+.list-style-example {
+    list-style: square inside;
+}
+
+/* lista sin estilos */
+.list-none {
+    list-style: none;
+}
+
+/* lista con imagen */
+.list-image {
+    list-style: url("https://cdn-icons-png.flaticon.com/16/1828/1828884.png") outside;
+}
+
+/* lista numerada personalizada */
+.list-ordered {
+    list-style: decimal-leading-zero inside;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>21-lists</h1>
+</header>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<div class="container">
+
+    <h2>List Style (shorthand)</h2>
+    <ul class="list-style-example">
+        <li>Elemento uno</li>
+        <li>Elemento dos</li>
+        <li>Elemento tres</li>
+    </ul>
+
+    <h2>List None</h2>
+    <ul class="list-none">
+        <li>Sin viñetas</li>
+        <li>Elemento dos</li>
+    </ul>
+
+    <h2>List Image</h2>
+    <ul class="list-image">
+        <li>Elemento con icono</li>
+        <li>Otro elemento</li>
+    </ul>
+
+    <h2>Ordered List</h2>
+    <ol class="list-ordered">
+        <li>Elemento uno</li>
+        <li>Elemento dos</li>
+        <li>Elemento tres</li>
+    </ol>
+
+</div>
+
+</body>
+</html>

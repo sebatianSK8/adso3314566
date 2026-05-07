@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19-text</title>
+
+<!-- MISMAS RUTAS -->
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+/* HEADER ARRIBA */
+header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* evitar conflictos con layout externo */
+body {
+    display: block !important;
+}
+
+/* CONTENEDOR */
+.container {
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px;
+}
+
+/* ALIGN */
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/* LINE HEIGHT */
+.line-height {
+    line-height: 2;
+}
+
+/* TEXT DECORATION */
+.decoration-none {
+    text-decoration: none;
+}
+
+.decoration-underline {
+    text-decoration: underline;
+}
+
+.decoration-line-through {
+    text-decoration: line-through;
+}
+
+/* TEXT TRANSFORM */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+/* TEXT INDENT */
+.indent {
+    text-indent: 40px;
+}
+
+/* SPACING */
+.letter-spacing {
+    letter-spacing: 3px;
+}
+
+.word-spacing {
+    word-spacing: 10px;
+}
+
+</style>
+</head>
+
+<body>
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<header>
+    <h1>19-text</h1>
+</header>
+
+<div class="container">
+
+    <h2>Text Align</h2>
+    <p class="align-left">Texto alineado a la izquierda</p>
+    <p class="align-center">Texto centrado</p>
+    <p class="align-right">Texto alineado a la derecha</p>
+
+    <h2>Line Height</h2>
+    <p class="line-height">
+        Este es un ejemplo de texto con mayor espacio entre líneas.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+
+    <h2>Text Decoration</h2>
+    <p class="decoration-none">Sin decoración</p>
+    <p class="decoration-underline">Subrayado</p>
+    <p class="decoration-line-through">Tachado</p>
+
+    <h2>Text Transform</h2>
+    <p class="uppercase">texto en mayúsculas</p>
+    <p class="lowercase">TEXTO EN MINÚSCULAS</p>
+    <p class="capitalize">texto con cada palabra capitalizada</p>
+
+    <h2>Text Indent</h2>
+    <p class="indent">
+        Este párrafo tiene sangría al inicio. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+    <h2>Spacing</h2>
+    <p class="letter-spacing">Espaciado entre letras</p>
+    <p class="word-spacing">Espaciado entre palabras en este texto</p>
+
+</div>
+
+</body>
+</html>

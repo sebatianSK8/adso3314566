@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20-pseudoclasses</title>
+
+<!-- MISMAS RUTAS -->
+<link rel="stylesheet" href="/src/css/03-css.css">
+
+<style>
+
+/* HEADER ARRIBA */
+header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* evitar conflictos con layout externo */
+body {
+    display: block !important;
+}
+
+/* CONTENEDOR */
+.container {
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px;
+}
+
+/* BOTÓN BASE */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: gray;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+
+/* :hover → cuando pasas el mouse */
+.btn:hover {
+    background: black;
+}
+
+/* :active → cuando haces clic */
+.btn:active {
+    background: red;
+}
+
+/* LINK STATES */
+.link:link {
+    color: blue;
+}
+
+.link:visited {
+    color: purple;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link:active {
+    color: red;
+}
+
+/* INPUT */
+input {
+    padding: 8px;
+    border: 2px solid gray;
+}
+
+/* :focus → cuando seleccionas el input */
+input:focus {
+    border-color: blue;
+    outline: none;
+}
+
+/* LISTA */
+li:first-child {
+    color: green;
+}
+
+li:last-child {
+    color: red;
+}
+
+li:nth-child(2) {
+    color: orange;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>20-pseudoclasses</h1>
+</header>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<div class="container">
+
+    <h2>Buttons (hover / active)</h2>
+    <a href="#" class="btn">Pasa el mouse</a>
+    <a href="#" class="btn">Haz clic</a>
+
+    <h2>Links (:link, :visited, :hover, :active)</h2>
+    <a href="https://example.com" class="link">Enlace de ejemplo</a>
+
+    <h2>Input (:focus)</h2>
+    <br><br>
+    <input type="text" placeholder="Haz clic aquí">
+
+    <h2>Lista (:first-child, :last-child, :nth-child)</h2>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
