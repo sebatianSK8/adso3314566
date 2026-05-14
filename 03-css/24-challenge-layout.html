@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sprite | Estudio de personajes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #17a053;  
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            line-height: 1.4;
+        }
+
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER (Sprite logo arriba) - MÁS GRANDE ===== */
+        .top-header {
+            text-align: center;
+            padding: 2rem 1rem 1rem 1rem;
+        }
+
+        .logo-sprite {
+            max-width: 200px;     /* 🔥 ANTES: 140px - AHORA MÁS GRANDE */
+            width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
+        /* ===== SECCIÓN: imagen flotante + menú - MÁS GRANDE ===== */
+        .nav-area {
+            position: relative;
+            text-align: center;
+            margin: 0.5rem auto 1rem auto;
+        }
+
+        .floating-sprite {
+            display: inline-block;
+            width: 160px;         /* 🔥 ANTES: 110px - AHORA MÁS GRANDE */
+            margin-bottom: -8px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .floating-sprite img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Menú principal */
+        .main-menu {
+            background: #0f5c2c;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.25rem;
+            border-radius: 20px 20px 0 0;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .main-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;    /* 🔥 Texto más grande */
+            letter-spacing: 1px;
+            padding: 1rem 1.8rem;  /* 🔥 Padding más grande */
+            background: #0f5c2c;
+            border-bottom: 4px solid #ffffff;
+            transition: 0.2s;
+            text-transform: uppercase;
+            font-family: inherit;
+        }
+
+        .main-menu a:hover {
+            background: #0a461f;
+            border-bottom-color: #f9ffac;
+            transform: translateY(-2px);
+        }
+
+        /* ===== GALERÍA: Sprite01, Sprite02, Sprite03 ===== */
+        .gallery-block {
+            background: #0f5c2c;
+            margin: 2rem auto;
+            padding: 2rem 1.5rem;
+            border-radius: 32px;
+        }
+
+        .gallery-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+
+        .sprite-card {
+            background: white;
+            border-radius: 32px;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            width: 280px;           /* 🔥 Tarjeta más ancha */
+            flex: 1 1 260px;
+            max-width: 320px;
+            box-shadow: 0 12px 18px rgba(0,0,0,0.2);
+        }
+
+        .sprite-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #0f5c2c;
+            font-weight: 800;
+        }
+
+        .sprite-card img {
+            width: 230px;           /* 🔥 Imagen dentro de tarjeta */
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* ===== BLOQUES DE TEXTO CON SPRITES LATERALES - MÁS GRANDES ===== */
+        .content-rows {
+            max-width: 1100px;      /* 🔥 Más ancho */
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .info-box {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;   /* 🔥 Más padding */
+            margin-bottom: 1.5rem;
+            border-left: 10px solid #0f5c2c;  /* 🔥 Borde más grueso */
+            border-radius: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .icon-left, .icon-right {
+            width: 100px;           /* 🔥 ANTES: 70px - AHORA MÁS GRANDE */
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .icon-left img, .icon-right img {
+            width: 90px;            /* 🔥 Tamaño fijo más grande */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .info-box p {
+            flex: 1;
+            font-size: 1.1rem;      /* 🔥 Texto más grande */
+            color: #1a2b16;
+            font-weight: 500;
+            margin: 0 1rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .info-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-box p {
+                margin: 0.5rem 0;
+            }
+            .icon-left, .icon-right {
+                width: 80px;
+            }
+            .icon-left img, .icon-right img {
+                width: 70px;
+            }
+        }
+
+        /* ===== FOOTER con logo grande - MÁS GRANDE ===== */
+        .site-footer {
+            background: #ffffff;
+            margin-top: 3rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 6px solid #ffffff;
+        }
+
+        .big-footer-logo {
+            width: 320px;     
+            max-width: 85%;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-nav-links a {
+            background: transparent;
+            color: #2a401f;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;   
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links a:hover {
+            border-bottom-color: #0f5c2c;
+            color: #0c441f;
+        }
+
+        .attribution {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #4c5c43;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<!-- Logo superior (Sprite) - AHORA MÁS GRANDE -->
+<header class="top-header">
+    <img src="imgs/sprite-5.png">
+</header>
+
+<nav class="main-menu">
+    <a href="#">INICIO</a>
+    <a href="#">NOSOTROS</a>
+    <a href="#">PORTAFOLIO</a>
+    <a href="#">SERVICIOS</a>
+    <a href="#">CONTACTO</a>
+</nav>
+
+
+<section class="gallery-block">
+    <div class="wrap">
+        <div class="gallery-flex">
+            <div class="sprite-card">
+                <h3>Sprite 01</h3>
+                <img src="imgs/sprite-1.png">
+            </div>
+            <div class="sprite-card">
+                <h3>Sprite 02</h3>
+                <img src="imgs/sprite-1.png">
+            </div>
+            <div class="sprite-card">
+                <h3>Sprite 03</h3>
+                <img src="imgs/sprite-1.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bloques de texto con iconos laterales - AHORA MÁS GRANDES -->
+<section class="content-rows">
+    <div class="info-box">
+        <div class="icon-left">
+            <img src="imgs/sprite-2.png">
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia obcaecati nemo aut hic iusto. Saepe assumenda deserunt asperiores, aut labore alias odio consectetur harum. Ducimus nisi optio possimus cum delectus nulla recusandae totam quibusdam vel atque nesciunt ipsam ad rem quo, expedita repellendus. Inventore sunt tempora atque maxime est repellat fugiat amet ratione, similique nostrum minus unde, architecto, neque rerum sint doloremque nulla ea adipisci vitae odit fuga! Autem alias maiores at, quo dolorum ut? Ducimus ea eum consequatur quas placeat labore dolore. Consectetur odit quibusdam ad eius necessitatibus illum labore, voluptatem quod architecto placeat delectus recusandae magni perferendis unde.</p>
+        <div class="icon-right">
+            <img src="imgs/sprite-3.png">
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="icon-left">
+            <img src="imgs/sprite-2.png">
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia obcaecati nemo aut hic iusto. Saepe assumenda deserunt asperiores, aut labore alias odio consectetur harum. Ducimus nisi optio possimus cum delectus nulla recusandae totam quibusdam vel atque nesciunt ipsam ad rem quo, expedita repellendus. Inventore sunt tempora atque maxime est repellat fugiat amet ratione, similique nostrum minus unde, architecto, neque rerum sint doloremque nulla ea adipisci vitae odit fuga! Autem alias maiores at, quo dolorum ut? Ducimus ea eum consequatur quas placeat labore dolore. Consectetur odit quibusdam ad eius necessitatibus illum labore, voluptatem quod architecto placeat delectus recusandae magni perferendis unde.</p>
+        <div class="icon-right">
+            <img src="imgs/sprite-3.png">
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="icon-left">
+            <img src="imgs/sprite-2.png">
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia obcaecati nemo aut hic iusto. Saepe assumenda deserunt asperiores, aut labore alias odio consectetur harum. Ducimus nisi optio possimus cum delectus nulla recusandae totam quibusdam vel atque nesciunt ipsam ad rem quo, expedita repellendus. Inventore sunt tempora atque maxime est repellat fugiat amet ratione, similique nostrum minus unde, architecto, neque rerum sint doloremque nulla ea adipisci vitae odit fuga! Autem alias maiores at, quo dolorum ut? Ducimus ea eum consequatur quas placeat labore dolore. Consectetur odit quibusdam ad eius necessitatibus illum labore, voluptatem quod architecto placeat delectus recusandae magni perferendis unde.</p>
+        <div class="icon-right">
+            <img src="imgs/sprite-3.png">
+        </div>
+    </div>
+</section>
+
+<!-- Footer con imagen grande - AHORA MÁS GRANDE -->
+<footer class="site-footer">
+    <img src="imgs/sprite-4.png" alt="Sprite grande" class="big-footer-logo" onerror="this.src='https://placehold.co/320x140?text=SPRITE+LARGE'">
+    <div class="footer-nav-links">
+        <a href="#">INICIO</a>
+        <a href="#">NOSOTROS</a>
+        <a href="#">PORTAFOLIO</a>
+        <a href="#">SERVICIOS</a>
+        <a href="#">CONTACTO</a>
+    </div>
+</footer>
+
+</body>
+</html>
