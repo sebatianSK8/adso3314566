@@ -18,18 +18,10 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* =========================
-        CONTENEDOR
-========================= */
-
 .container{
     width:1000px;
     margin:0 auto;
 }
-
-/* =========================
-        LOGO SUPERIOR
-========================= */
 
 .top-logo{
     text-align:center;
@@ -40,10 +32,6 @@ body{
 .top-logo img{
     width:140px;
 }
-
-/* =========================
-        MENU
-========================= */
 
 .menu{
     display:flex;
@@ -69,10 +57,6 @@ body{
     background:#083f1d;
     border-bottom:4px solid #ffd500;
 }
-
-/* =========================
-        GALERIA
-========================= */
 
 .gallery{
     background:#0f5d2d;
@@ -105,10 +89,8 @@ body{
     color:#000;
     font-weight:bold;
 
-    /* Transparencia REAL */
     background: rgba(255,255,255,0.35);
 
-    /* Difuminado elegante */
     backdrop-filter: blur(2px);
 }
 
@@ -116,13 +98,8 @@ body{
     width:100%;
     display:block;
 
-    /* La imagen sube */
     margin-top:-20px;
 }
-
-/* =========================
-        CAJAS INFO
-========================= */
 
 .info-box{
     background:#ffffff;
@@ -150,10 +127,6 @@ body{
     line-height:1.9;
     text-align:justify;
 }
-
-/* =========================
-        FOOTER
-========================= */
 
 footer{
     width:1000px;
@@ -184,10 +157,6 @@ footer{
 .footer-menu a:hover{
     color:#0f5d2d;
 }
-
-/* =========================
-        RESPONSIVE
-========================= */
 
 @media(max-width:800px){
 
@@ -229,15 +198,18 @@ footer{
 </head>
 
 <body>
+<a href="../03-css/" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
 
-<!-- LOGO SUPERIOR -->
 <div class="top-logo">
     <img src="imgs/sprite-5.png" alt="">
 </div>
 
 <div class="container">
 
-    <!-- MENU -->
     <nav class="menu">
         <a href="#">INICIO</a>
         <a href="#">NOSOTROS</a>
@@ -246,7 +218,6 @@ footer{
         <a href="#">CONTACTO</a>
     </nav>
 
-    <!-- GALERIA -->
     <section class="gallery">
 
         <div class="gallery-content">
@@ -270,7 +241,6 @@ footer{
 
     </section>
 
-    <!-- BLOQUES -->
     <section>
 
         <div class="info-box">
@@ -340,7 +310,6 @@ footer{
 
 </div>
 
-<!-- FOOTER -->
 <footer>
 
     <img src="imgs/sprite-4.png" class="footer-logo" alt="">
