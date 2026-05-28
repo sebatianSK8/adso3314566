@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24-challenge-Layout</title>
+    <title>24 challenge Layout</title>
 
     <style>
 
@@ -13,7 +13,6 @@
             min-height: 100dvh;
             padding-bottom: 20px;
 
-            /* LOGO */
             div.logo{
                 background: url(imgs/sprite-sheet.png) no-repeat;
                 background-position: -24px -436px;
@@ -22,7 +21,6 @@
                 width: 162px;
             }
 
-            /* MENÚ */
             nav {
                 display: flex;
                 justify-content: center;
@@ -49,7 +47,6 @@
                 border-bottom: 6px solid yellow;
             }
 
-            /* GALERÍA */
             section.galeria {
                 background-color: #0a5f2a;
                 width: 1020px;
@@ -69,7 +66,6 @@
                 transition: all 0.3s ease;
             }
 
-            /* Resaltado en blanco al pasar el cursor sobre las tarjetas Sprite 01, 02, 03 */
             article.card:hover {
                 background-color: #ffffff;
                 box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
@@ -90,7 +86,6 @@
                 transition: background-color 0.3s ease;
             }
 
-            /* El título también se resalta */
             article.card:hover h2 {
                 background-color: rgba(255, 255, 255, 0.95);
             }
@@ -102,12 +97,10 @@
                 transition: filter 0.3s ease;
             }
 
-            /* La imagen se vuelve un poco más brillante */
             article.card:hover div.imagen {
                 filter: brightness(1.05);
             }
 
-            /* CONTENIDO */
             section.contenido {
                 background-color: #0a5f2a;
                 width: 1000px;
@@ -143,7 +136,6 @@
                 text-align: justify;
             }
 
-            /* Al pasar el cursor por el texto de lorem se marca en verde */
             div.texto:hover {
                 color: #17a053;
                 cursor: pointer;
@@ -156,7 +148,6 @@
                 background-position: -360px -420px;
             }
 
-            /* FOOTER - RECUADRO BLANCO CON IMAGEN CENTRADA */
             footer {
                 background-color: white;
                 width: 1040px;
@@ -165,8 +156,6 @@
                 text-align: center;
             }
 
-            /* IMAGEN GRANDE CENTRADA EN EL FOOTER */
-            /* TÚ AJUSTAS LA POSICIÓN DE ESTA IMAGEN */
             div.footer-logo {
                 width: 250px;
                 height: 160px;
@@ -176,7 +165,6 @@
                 display: block;
             }
 
-            /* MENÚ DEL FOOTER */
             div.footer-menu {
                 display: flex;
                 justify-content: center;
@@ -195,12 +183,10 @@
                 border-bottom: 3px solid transparent;
             }
 
-            /* Barrita verde al pasar el cursor en el menú del footer */
             div.footer-menu a:hover {
                 border-bottom: 3px solid #17a053;
             }
 
-            /* Diferentes sprites en galería */
             .card:nth-child(1) .imagen {
                 background-position: -480px -9px;
             }
@@ -211,7 +197,6 @@
                 background-position: -480px -9px;
             }
 
-            /* Iconos diferentes en cada bloque */
             .bloque:first-child .icono {
                 background-position: -290px -500px;
             }
@@ -246,10 +231,8 @@
 
     <main>
 
-        <!-- LOGO -->
         <div class="logo"></div>
 
-        <!-- MENÚ -->
         <nav>
             <a href="#">Inicio</a>
             <a href="#">Nosotros</a>
@@ -258,7 +241,6 @@
             <a href="#">Contacto</a>
         </nav>
 
-        <!-- GALERÍA (Sprite 01, 02, 03) -->
         <section class="galeria">
             <article class="card">
                 <h2>Sprite 01</h2>
@@ -274,7 +256,6 @@
             </article>
         </section>
 
-        <!-- CONTENIDO CON TEXTO - 3 BLOQUES -->
         <section class="contenido">
             <div class="bloque">
                 <div class="icono"></div>
@@ -314,7 +295,6 @@
             </div>
         </section>
 
-        <!-- FOOTER CON IMAGEN GRANDE CENTRADA Y MENÚ -->
         <footer>
             <div class="footer-logo"></div>
             <div class="footer-menu">

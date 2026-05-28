@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>27 box shadow</title>
+  <link rel="stylesheet" href="/src/css/03-css.css">
+  <style>
+
+    body{
+      background: #777777;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1{
+      margin-top: 30px;
+      color: #ffffff;
+    }
+
+    p{
+      width: 70%;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .contenedor{
+      width: 260px;
+      border: 2px solid;
+      padding: 20px;
+      color: rgb(255, 255, 255);
+      background: #3c008f80;
+      margin: 40px auto;
+    }
+
+    .box{
+      width: 200px;
+      height: 200px;
+      background: #b341ff;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .box1{
+      box-shadow: 0 0 12px #fff;
+    }
+    .box2{
+      box-shadow: -10px -10px 24px 0 #fff;
+    }
+    .box3{
+      box-shadow: 0 0 20px #fff inset;
+    }
+    .box4{
+      box-shadow:
+      4px 4px 0 4px #cc0,
+      8px 8px 0 6px #00c,
+      12px 12px 0 8px #c00;
+    }
+    
+    div images {
+        display: flex;
+        justify-content: center;
+        margin-block: 2rem;
+        gap: 1rem;
+    }
+    div images img :first-child {
+        box-shadow: 0 0 12px #fff;
+    }
+    div images img :last-child {
+        filter: drop-shadow(0 0 12px #fff);
+    }
+
+  </style>
+</head>
+<body>
+<a href="../03-css/" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+  <h1>27 box shadow</h1>
+  <h2>Property attaches one or more shadows to an element.</h2>
+
+<section>
+    <h3>box-shadow: 0 0 12px #fff</h3>
+    <div class="box box1"></div>
+    <h3>box-shadow: -10px -10px 24px 0 #fff</h3>
+    <div class="box box2"></div>
+    <h3>box-shadow: 0 0 20px #fff inset</h3>
+    <div class="box box3"></div>
+    <h3>box-shadow: multiple</h3>
+    <div class="box box4"></div>
+    <h3>box-shadow VS drop-shadow()</h3>
+    <div class="images">
+        <img src="/03-css/imgs/homer.jpg" width="180">
+        <img src="/03-css/imgs/homer.jpg" width="180">
+    </div>
+</section>
+
+  </div>
+
+</body>
+</html>

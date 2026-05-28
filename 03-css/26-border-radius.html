@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>26 Border Radius</title>
+  <link rel="stylesheet" href="/src/css/03-css.css">
+  <style>
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+    }
+
+    .contenedor{
+      width: 260px;
+      border: 2px solid;
+      padding: 20px;
+      color: rgb(255, 255, 255);
+      background: #3c008f80;
+      margin: 40px auto;
+    }
+
+    .shape{
+      background: rgb(146, 146, 146);
+      width: 140px;
+      height: 140px;
+      margin: 20px auto;
+    }
+    
+    .shape1{
+      border-radius: 50%;
+    }
+    .shape2{
+      border-radius: 40px 0;
+    }
+    .shape3{
+      border-radius: 140px 0 0 140px;
+    }
+    .shape4{
+      border-radius: 140px 0 140px 140px;
+    }
+
+    p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+    <h1>26 Border Radius</h1>
+    <h2>Property defines the radius of the element's corners.</h2>
+    </header>
+<a href="../03-css/" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+
+<div class="contenedor">
+
+    <p>border-radius: 50%</p>
+    <div class="shape shape1"></div>
+    <p>border-radius: 40px 0</p>
+    <div class="shape shape2"></div>
+    <p>border-radius: 140px 0 0 140px</p>
+    <div class="shape shape3"></div>
+    <p>border-radius: 140px 0 140px 140px</p>
+    <div class="shape shape4"></div>
+
+</div>
+
+</body>
+</html>
