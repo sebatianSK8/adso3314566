@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>26 Border Radius</title>
-  <link rel="stylesheet" href="/src/css/03-css.css">
+  <link rel="stylesheet" href="../src/css/03-css.css">
   <style>
-
-    body{
+    body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       display: flex;
@@ -16,71 +15,164 @@
     }
 
     header {
-    text-align: center;
-    margin-top: 30px;
-    color: rgb(255, 255, 255);
-    }
-
-    .contenedor{
-      width: 260px;
-      border: 2px solid;
-      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
       color: rgb(255, 255, 255);
-      background: #3c008f80;
-      margin: 40px auto;
     }
 
-    .shape{
+    .shape {
       background: rgb(146, 146, 146);
       width: 140px;
       height: 140px;
       margin: 20px auto;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      cursor: pointer;
+      background: linear-gradient(135deg, rgb(146, 146, 146), rgb(120, 120, 145));
     }
-    
-    .shape1{
+
+    .shape1 {
       border-radius: 50%;
     }
-    .shape2{
+
+    .shape2 {
       border-radius: 40px 0;
     }
-    .shape3{
+
+    .shape3 {
       border-radius: 140px 0 0 140px;
     }
-    .shape4{
+
+    .shape4 {
       border-radius: 140px 0 140px 140px;
     }
 
-    p{
-    margin: 0;
-    font-size: 14px;
-    font-weight: bold;
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: bold;
     }
 
-</style>
+    .shape1:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 12px #ff0000, 0 0 25px #ff0000, 0 0 40px #ff0000;
+      background: radial-gradient(circle at 30% 30%, #ff5622, #ff9e30);
+      animation: pulseNeon1 0.7s infinite alternate;
+    }
+
+    .shape2:hover {
+      transform: scale(1.07) rotate(2deg);
+      box-shadow: 0 0 12px #0ff, 0 0 25px #0ff, 0 0 40px #00ccff;
+      background: linear-gradient(135deg, #33ddff, #0099ff);
+      animation: wobbleCyan 0.5s ease-in-out infinite;
+    }
+
+    .shape3:hover {
+      transform: scale(1.07) translateY(-4px);
+      box-shadow: 0 0 12px #00ffaa, 0 0 25px #00ff88, 0 0 40px #22ff99;
+      background: linear-gradient(145deg, #44ffaa, #00cc77);
+      animation: bounceGreen 0.6s ease infinite;
+    }
+
+    .shape4:hover {
+      transform: scale(1.07) translateX(3px);
+      box-shadow: 0 0 12px #ffaa33, 0 0 25px #ffaa22, 0 0 40px #ff8800;
+      background: linear-gradient(125deg, #ffcc55, #ff9933);
+      animation: shakeAmber 0.45s ease-in-out infinite;
+    }
+
+    @keyframes pulseNeon1 {
+      0% {
+        box-shadow: 0 0 5px #ff66cc, 0 0 12px #ff44aa;
+        transform: scale(1.05);
+      }
+      100% {
+        box-shadow: 0 0 18px #ff88dd, 0 0 35px #ff66cc, 0 0 50px #ff44aa;
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes wobbleCyan {
+      0% {
+        transform: scale(1.07) rotate(-1deg);
+        box-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+      }
+      50% {
+        transform: scale(1.09) rotate(2deg);
+        box-shadow: 0 0 20px #33ffff, 0 0 35px #00ccff;
+      }
+      100% {
+        transform: scale(1.07) rotate(-1deg);
+        box-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+      }
+    }
+
+    @keyframes bounceGreen {
+      0%, 100% {
+        transform: scale(1.07) translateY(0px);
+        box-shadow: 0 0 8px #00ffaa, 0 0 18px #00ff88;
+      }
+      50% {
+        transform: scale(1.1) translateY(-8px);
+        box-shadow: 0 0 22px #55ffbb, 0 0 38px #00ff99;
+      }
+    }
+
+    @keyframes shakeAmber {
+      0%, 100% {
+        transform: scale(1.07) translateX(0px);
+        box-shadow: 0 0 8px #ffaa33, 0 0 18px #ffaa22;
+      }
+      25% {
+        transform: scale(1.08) translateX(-4px);
+        box-shadow: 0 0 20px #ffcc55, 0 0 32px #ffaa33;
+      }
+      75% {
+        transform: scale(1.08) translateX(4px);
+        box-shadow: 0 0 20px #ffcc55, 0 0 32px #ffaa33;
+      }
+    }
+
+    .shape:hover {
+      background-blend-mode: overlay;
+    }
+
+    section:last-child {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
+  <header>
     <h1>26 Border Radius</h1>
     <h2>Property defines the radius of the element's corners.</h2>
-    </header>
+  </header>
+
 <a href="../03-css/" class="btn-home">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
         <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
     </svg>
 </a>
 
-<div class="contenedor">
+  <div class="contenedor">
+    <section>
+      <p>border-radius: 50%</p>
+      <div class="shape shape1"></div>
+    </section>
 
-    <p>border-radius: 50%</p>
-    <div class="shape shape1"></div>
-    <p>border-radius: 40px 0</p>
-    <div class="shape shape2"></div>
-    <p>border-radius: 140px 0 0 140px</p>
-    <div class="shape shape3"></div>
-    <p>border-radius: 140px 0 140px 140px</p>
-    <div class="shape shape4"></div>
+    <section>
+      <p>border-radius: 40px 0</p>
+      <div class="shape shape2"></div>
+    </section>
 
-</div>
+    <section>
+      <p>border-radius: 140px 0 0 140px</p>
+      <div class="shape shape3"></div>
+    </section>
 
+    <section>
+      <p>border-radius: 140px 0 140px 140px</p>
+      <div class="shape shape4"></div>
+    </section>
+  </div>
 </body>
 </html>
