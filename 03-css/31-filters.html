@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILTERS.CSS</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<body style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; min-height: 100vh !important; margin: 0 !important; box-sizing: border-box !important; position: relative !important; padding: 40px 20px !important;">
+    
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+
+    <div style="text-align: center !important; width: 100% !important; margin-bottom: 30px !important; color: #ffffff !important;">
+        <h1 style="margin: 0 !important; padding: 0 !important; font-size: 2.5rem !important;">FILTERS.CSS</h1>
+        <p style="margin: 5px 0 0 0 !important; padding: 0 !important; font-size: 1.1rem !important; opacity: 0.8 !important;"></p>
+    </div>
+
+    <div class="contenedor-imagenes-vertical" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 40px !important; width: 100% !important; max-width: 500px !important; box-sizing: border-box !important;">
+        
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: blur(5px)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Blur" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='blur(5px)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: brightness(1.8)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Brightness" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='brightness(1.8)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: contrast(200%)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Contrast" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='contrast(200%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: saturate(300%)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Saturate" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='saturate(300%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: grayscale(100%)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Grayscale" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='grayscale(100%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: sepia(100%)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Sepia" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='sepia(100%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: invert(100%)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Invert" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='invert(100%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: opacity(0.3)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Opacity" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='opacity(0.3)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #94a3b8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important;">filter: hue-rotate(180deg)</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Hue-Rotate" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='hue-rotate(180deg)'" onmouseout="this.style.filter='none'">
+        </div>
+
+        <div style="text-align: center !important; width: 100% !important;">
+            <span style="color: #38bdf8 !important; display: block !important; margin-bottom: 8px !important; font-family: monospace !important; font-size: 1rem !important; font-weight: bold !important;">Efecto Combinado</span>
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief - Combinado" style="width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 8px !important; display: block !important; transition: filter 0.3s ease !important;" onmouseover="this.style.filter='blur(2px) brightness(1.2) saturate(150%)'" onmouseout="this.style.filter='none'">
+        </div>
+
+    </div>
+
+</body>
+</html>

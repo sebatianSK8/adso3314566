@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-clip-path - ADSO</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    
+    <style>
+        /* Estilos específicos para lograr la transición ultra fluida de la estrella */
+        .masterchief-clip {
+            width: 100% !important;
+            height: 400px !important;
+            object-fit: cover !important;
+            display: block !important;
+            margin: 0 auto !important;
+            
+            /* Estado Inicial: Estrella totalmente formada */
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%) !important;
+            
+            /* Control de fluidez: animación suave de 0.5 segundos con aceleración/desaceleración */
+            transition: clip-path 0.5s ease-in-out !important;
+        }
+
+        /* Estado Hover: Al pasar el cursor se destransforma a la imagen cuadrada normal */
+        .masterchief-clip:hover {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+        }
+    </style>
+</head>
+<body style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; min-height: 100vh !important; margin: 0 !important; box-sizing: border-box !important; position: relative !important; padding: 40px 20px !important;">
+    
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+
+    <div style="text-align: center !important; width: 100% !important; margin-bottom: 30px !important; color: #ffffff !important;">
+        <h1 style="margin: 0 !important; padding: 0 !important; font-size: 2.5rem !important;">32-clip-path</h1>
+        <p style="margin: 5px 0 0 0 !important; padding: 0 !important; font-size: 1.1rem !important; opacity: 0.8 !important;"></p>
+    </div>
+
+    <div style="display: flex !important; justify-content: center !important; align-items: center !important; width: 100% !important; max-width: 450px !important; box-sizing: border-box !important;">
+        
+        <div style="text-align: center !important; width: 100% !important;">
+            
+            <span style="color: #a855f7 !important; display: block !important; margin-bottom: 15px !important; font-family: monospace !important; font-size: 1.1rem !important; font-weight: bold !important;">
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            </span>
+
+            <img src="../src/imgs/tonyhawk.jpg" alt="Master Chief" class="masterchief-clip">
+        
+        </div>
+
+    </div>
+
+</body>
+</html>

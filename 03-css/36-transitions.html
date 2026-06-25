@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36-transitions</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main section {
+            img{
+                border: none;
+                border-radius: 0;
+                filter: drop-shadow(0 0 12px #fff); 
+            }
+            img.transition01 {
+                transition: transform 0.5s ease-in;
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+            img.transition02 {
+                transition: transform 0.5s ease-out;
+                &:hover {
+                    transform: rotate(-0.5turn);
+                }
+            }
+            img.transition03 {
+                transition: transform 0.5s ease-out;
+                &:hover {
+                    transform: rotateY(180deg);
+            }
+        }
+            img.transition04 {
+                transition: transform 0.5s ease-out;
+                &:hover {
+                    transform: TranslateX(80px);
+            }
+        }
+        div.box {
+            background-color: #fff;
+            height: 80px;
+            margin-block: 2rem;
+            width: 80px;
+            transition: width 1s,
+                        height 1s 1s,
+                        background-color 2s 1s;
+            &:hover {
+                background-color: #f00;
+                width: 300px;
+                height: 160px;
+            }
+        }
+    }
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+</body>
+<main>
+    <header>
+        <h1>36-transitions</h1>
+        <h2>Enable you to define the transition between two states of an element.</h2>
+    </header>
+    <section>
+        <h3>Scale (1.3)</h3>
+        <img class="transition01" src="../src/imgs/dk.png" alt="DK">
+        <h3>Rotate(-180deg):</h3>
+        <img class="transition02" src="../src/imgs/dk.png" alt="DK">
+        <h3>RotateY(180deg):</h3>
+        <img class="transition03" src="../src/imgs/dk.png" alt="DK">
+        <h3>TranstaleX(100px):</h3>
+        <img class="transition04" src="../src/imgs/dk.png" alt="DK">
+        <h3>Multiple:</h3>
+        <div class="box"></div>
+    </section>
+</main>
+</html>

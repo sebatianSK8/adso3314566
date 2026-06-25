@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38-media-queries</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            transition: all 0.5s ease-in;
+        }
+
+        body {
+            font-family: Poppins;
+            background-color: #003675;                
+            color: #fff;
+        }
+
+        body main {
+            padding: 4rem;
+        }
+
+        body main header figure.logo {
+            background: url(../src/imgs/pepsi01.png) no-repeat center;
+            height: 354px;
+            margin: 0 auto;
+            width: 919px;
+        }
+
+        body main section h1 {
+            text-align: center;
+        }
+
+        body main section h1 span.md, 
+        body main section h1 span.sm {
+            display: none;
+        }
+
+        body main section p {
+            margin-block: 4rem;
+            text-align: justify;
+            line-height: 2rem;
+        }
+
+        /* Break Points */
+        @media (max-width: 1024px) {
+            body main {
+                padding: 4rem;
+            }
+
+            body main header figure.logo {
+                background: url(../src/imgs/pepsi02.png) no-repeat center;
+                height: 370px;
+                width: 348px;
+            }
+
+            body main section h1 {
+                font-size: 2rem;
+            }
+
+            body main section h1 span.lg, 
+            body main section h1 span.sm {
+                display: none;
+            }
+
+            body main section h1 span.md {
+                display: inline;
+            }
+        }
+
+        @media (max-width: 780px) {
+            body main {
+                padding: 2rem;
+            }
+
+            body main header figure.logo {
+                background: url(../src/imgs/pepsi03.png) no-repeat center;
+                height: 156px;
+                width: 162px;
+            }
+
+            body main section h1 {
+                font-size: 1.2rem;
+            }
+
+            body main section h1 span.lg, 
+            body main section h1 span.md {
+                display: none;
+            }
+
+            body main section h1 span.sm {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <figure class="logo"></figure>
+        </header>
+        <section>
+            <h1>
+                Media Queries
+                <span class="lg"> (> 1024px) 💻Desktop </span>
+                <span class="md"> (< 1024px) 🖥️Tablet </span>
+                <span class="sm"> (< 780px) 📱Mobile </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro amet unde incidunt voluptate eos accusantium fugit beatae minus itaque, voluptatem commodi harum ratione neque corrupti. Quis ducimus vel ad maiores quasi facere tempore! Praesentium deleniti quisquam autem qui deserunt, fugiat, illo cum repudiandae corrupti aperiam nihil velit ab quae saepe esse neque at officia tenetur quaerat voluptatibus totam officiis consequuntur. In ducimus eaque vero voluptates cupiditate sed alias nulla repudiandae! Dignissimos molestias facilis saepe dolor aliquam. Corrupti, voluptatum? Voluptate animi fugit id quae, vero autem eligendi officiis ex alias aperiam architecto sint repellat ipsam culpa provident aliquam, eaque corrupti voluptates. Deserunt labore deleniti natus, aut esse dignissimos? Corrupti eaque tempore earum eos incidunt architecto quisquam quia. Corrupti sunt molestias unde!
+            </p>
+        </section>
+    </main>
+</body>
+</html>

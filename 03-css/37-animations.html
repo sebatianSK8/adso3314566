@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37-animaciones</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        main section {
+            div.jungle {
+                background: url(../src/imgs/jungle.png) no-repeat center;
+                border-radius: 4px;
+                margin-block: 2rem;
+                position: relative;
+                height: 471px;
+                width: 380px;
+
+                img {
+                    border-radius: 0;
+                    border: none;
+                    position: absolute;
+                }
+
+                img.logo {
+                    top: 35px;
+                    left: 30px;
+                    height: 72px;
+                    object-fit: contain;
+                    width: 317px;
+                    animation: 2s animlogo ease-in infinite;
+                }
+
+                img.dk {
+                    top: 120px;
+                    left: 120px;
+                    width: 140px;
+                    object-fit: contain;
+                    z-index: 8;
+                    animation: 2s animDK ease-in infinite;
+                }
+
+                div.move {
+                    position: absolute;
+                    top: 240px;
+                    left: 0;
+
+                img.ryno {
+                    width: 140px;
+                    object-fit: contain;
+                    top: 0;
+                    animation: 3s animRynoJump linear infinite;
+                }
+            }
+        }
+    }
+
+        @keyframes animlogo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes animDK {
+            0%   { top: 120px; transform: rotateX(0deg); }
+            40%   { top: 80px; transform: rotateX(0deg); }
+            50%   { top: 80px; transform: rotateX(360deg); }
+            60%   { top: 80px; transform: rotateX(360deg); }
+            100% { top: 120px; transform: rotateX(360deg); }
+        }
+
+        
+        @keyframes animRynoJump {
+            0% { transform: translateX(0px); top: 0px; }
+            30% { transform: translateX(110px); top: 0px; }
+            35% { transform: translateX(120px) translateY(-50px) rotate(-10deg); top: -8px; }
+            40% { transform: translateX(120px) translateY(-10px) rotate(10deg); top: 0px; }
+            45% { transform: translateX(120px); top: 0px; }
+            50% { transform: translateX(120px) scaleX(-1); top: 0px; }
+            90% { transform: translateX(0px) scaleX(-1); top: 0px; }
+            100% { transform: translateX(0px) scaleX(1); top: 0px; }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>37-animations</h1>
+            <h2>Lets an element gradually change from one style to another.</h2>
+        </header>
+        <section>
+            <div class="jungle">
+                <img src="../src/imgs/logo-dk.png" class="logo">
+                <img src="../src/imgs/dk.png" class="dk">
+                <div class="move">
+                    <img src="../src/imgs/ryno.png" class="ryno">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
