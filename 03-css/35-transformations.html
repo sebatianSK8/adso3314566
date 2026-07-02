@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-Transformations</title>
+    <link rel="stylesheet" href="../src/css/03-CSS.css">
+    <style>
+        section img {
+            display: block;
+            margin-block: 1rem;
+            margin-inline: auto;
+        }
+        img.transform1 {
+            transform: rotate(90deg);
+        }
+        img.transform2 {
+            transform: scale(0.5);
+        }
+        img.transform3 {
+            transform: TranslateX(-100px);
+        }
+        img.transform4 {
+            transform: skew(30deg);
+        }
+        img.transform5 {
+            transform: rotate(45deg) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>35 Transformations</h1>
+            <h2>Property lets you rotate, scale, skew, or translate an element.</h2>
+        </header>
+        <section>
+                        <h3>Rotate: 90deg</h3>
+            <img class="transform1" src="../src/imgs/bart simpson.png" width="180px">
+            <h3>Scale: 0.5</h3>
+            <img class="transform2" src="../src/imgs/bart simpson.png" width="180px">
+            <h3>TranslateX: -100px</h3>
+            <img class="transform3" src="../src/imgs/bart simpson.png" width="180px">
+            <h3>Skew: 30deg</h3>
+            <img class="transform4" src="../src/imgs/bart simpson.png" width="180px">
+            <h3>Rotate Scale:</h3>
+            <img class="transform5" src="../src/imgs/bart simpson.png" width="180px">
+        </section>
+    </main>
+</body>
+</html>

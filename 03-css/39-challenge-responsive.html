@@ -1,115 +1,515 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>39-challenge-responsive</title>
+    <title>39-challenge-responsive · Los Simpsons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
         * {
-            transition: all 0.5s ease-in;
+            transition: all 0.5s ease-in-out;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Poppins;
-            background-color: #ffee53;                
-            color: #fff;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+                url('../src/imgs/family\(1\).png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        body main {
-            padding: 4rem;
+        .gallery-wrapper {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255, 240, 165, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 2.2rem 2.5rem 3rem;
+            border-radius: 80px 80px 40px 40px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3), 0 0 0 8px rgba(83, 60, 0, 0.8), 0 0 0 12px rgba(90, 59, 0, 0.6);
+            border: 4px solid #d49b1a;
+            position: relative;
         }
 
-        body main header figure.logo {
-            background: url(../src/imgs/pepsi01.png) no-repeat center;
-            height: 354px;
-            margin: 0 auto;
-            width: 919px;
+        .btn-home {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px;
+            border-radius: 50%;
+            border: 3px solid #000000;
+            box-shadow: 0 4px 0 #000000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+            width: 56px;
+            height: 56px;
         }
 
-        body main section h1 {
+        .btn-home:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 0 #0f2b4b;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-home svg {
+            width: 28px;
+            height: 28px;
+            fill: #000000;
+        }
+
+        .main-title {
+            font-family: 'Comic Neue', cursive;
+            font-size: 5rem;
             text-align: center;
+            letter-spacing: 8px;
+            color: #feda1a;
+            -webkit-text-stroke: 4px #1b3b6b;
+            text-shadow: 8px 8px 0 #1b3b6b, 12px 12px 0 rgba(0,0,0,0.2);
+            transform: rotate(-1deg);
+            margin-bottom: 0.6rem;
+            word-break: break-word;
         }
 
-        body main section h1 span.md, 
-        body main section h1 span.sm {
+        .sub-sensei {
+            text-align: center;
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.2rem;
+            color: #2a3f6e;
+            background: rgba(255, 215, 0, 0.9);
+            display: inline-block;
+            padding: 0.3rem 2.5rem;
+            border-radius: 60px;
+            margin: 0 auto 2rem auto;
+            border: 3px solid #0f2b4b;
+            box-shadow: 0 4px 0 #0f2b4b;
+            letter-spacing: 2px;
+        }
+
+        .grid-barts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-bottom {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .grid-barts .card {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            transform: translateY(0);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .grid-barts .card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .grid-barts .image-slot {
+            background: rgba(0, 0, 0, 0.05);
+            background-image: none;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-barts .image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            opacity: 0.95;
+        }
+
+        .grid-barts .card:hover .image-slot img {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .grid-barts .image-slot::after {
+            content: "🖼️";
+            font-size: 3.5rem;
+            opacity: 0.2;
+            filter: grayscale(0.5);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            position: absolute;
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .grid-barts .image-slot:has(img[src]:not([src=""]))::after {
             display: none;
         }
 
-        body main section p {
-            margin-block: 4rem;
-            text-align: justify;
-            line-height: 2rem;
+        .grid-barts .card-footer {
+            padding: 0.8rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            text-align: center;
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: rgba(27, 59, 107, 0.9);
+            border-top: 3px solid rgba(27, 59, 107, 0.4);
+            transition: all 0.5s ease;
         }
 
-        /* Break Points */
+        .grid-barts .card:hover .card-footer {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 2px 2px 0 rgba(27, 59, 107, 0.6);
+        }
+
+        .grid-bottom .card {
+            display: flex;
+            flex-direction: row;
+            border-radius: 40px 20px 20px 40px;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            gap: 0;
+            cursor: default;
+            overflow: visible;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .grid-bottom .card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .grid-bottom .card > div:first-child {
+            flex: 0 0 30%;
+            min-width: 140px;
+            max-width: 30%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 40px 0 0 40px;
+            box-shadow: 0 12px 0 rgba(255, 255, 255, 0.5), 0 15px 20px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            border-right: none;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .grid-bottom .card:hover > div:first-child {
+            transform: scale(1.03);
+            box-shadow: 0 16px 0 rgba(255, 255, 255, 0.6), 0 22px 28px rgba(0,0,0,0.4);
+        }
+
+        .grid-bottom .card .image-slot {
+            background: rgba(255, 255, 255, 0.9);
+            background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.5) 0px, rgba(255,255,255,0.5) 2px, rgba(221,208,178,0.3) 2px, rgba(221,208,178,0.3) 8px);
+            border-bottom: none;
+            aspect-ratio: 1/1;
+            border-radius: 40px 0 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-bottom .card .image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .grid-bottom .card:hover .image-slot img {
+            transform: scale(1.1);
+        }
+
+        .grid-bottom .lorem-box {
+            flex: 1;
+            min-width: 160px;
+            border-radius: 0 40px 40px 0;
+            border-left: none;
+            box-shadow: 0 12px 0 rgba(255, 255, 255, 0.5), 10px 15px 20px rgba(0,0,0,0.2);
+            margin: 0;
+            height: auto;
+            min-height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.8rem 2rem;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2c1f0c;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+
+        .grid-bottom .card:hover .lorem-box {
+            transform: scale(1.02);
+            box-shadow: 0 16px 0 rgba(255, 255, 255, 0.6), 10px 20px 28px rgba(0,0,0,0.3);
+        }
+
+        .grid-bottom .lorem-box p {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            text-align: justify;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .grid-bottom .lorem-box h3 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.8rem;
+            color: #000000;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8);
+            padding-bottom: 0.3rem;
+        }
+
+        .gallery-wrapper::before {
+            content: "🍩";
+            position: absolute;
+            font-size: 3.5rem;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+            right: 20px;
+            top: 10px;
+            pointer-events: none;
+        }
+
         @media (max-width: 1024px) {
-            body main {
-                padding: 4rem;
+            .grid-barts {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
-
-            body main header figure.logo {
-                background: url(../src/imgs/pepsi02.png) no-repeat center;
-                height: 370px;
-                width: 348px;
+            .grid-bottom {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-
-            body main section h1 {
-                font-size: 2rem;
+            .grid-bottom .lorem-box {
+                border-radius: 30px;
+                min-height: 120px;
             }
-
-            body main section h1 span.lg, 
-            body main section h1 span.sm {
-                display: none;
+            .main-title {
+                font-size: 4rem;
+                -webkit-text-stroke: 3px #1b3b6b;
             }
-
-            body main section h1 span.md {
-                display: inline;
+            .grid-bottom .card > div:first-child {
+                border-radius: 30px 0 0 30px;
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+            .grid-bottom .lorem-box {
+                border-radius: 0 30px 30px 0;
+            }
+            .btn-home {
+                top: 15px;
+                left: 18px;
+                width: 48px;
+                height: 48px;
+                padding: 10px;
+            }
+            .btn-home svg {
+                width: 24px;
+                height: 24px;
             }
         }
 
         @media (max-width: 780px) {
-            body main {
-                padding: 2rem;
+            .gallery-wrapper {
+                padding: 1.5rem 1rem;
+                border-radius: 40px;
             }
-
-            body main header figure.logo {
-                background: url(../src/imgs/pepsi03.png) no-repeat center;
-                height: 156px;
-                width: 162px;
+            .grid-barts {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
-
-            body main section h1 {
+            .grid-barts .card-footer {
                 font-size: 1.2rem;
+                padding: 0.5rem;
             }
-
-            body main section h1 span.lg, 
-            body main section h1 span.md {
-                display: none;
+            .main-title {
+                font-size: 2.8rem;
+                -webkit-text-stroke: 2px #1b3b6b;
+                text-shadow: 4px 4px 0 #1b3b6b;
             }
+            .grid-bottom .lorem-box {
+                font-size: 0.85rem;
+                padding: 1rem;
+                border-radius: 20px;
+            }
+            .sub-sensei {
+                font-size: 1rem;
+                padding: 0.2rem 1.5rem;
+            }
+            .grid-bottom .card > div:first-child {
+                border-radius: 20px 0 0 20px;
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+            .grid-bottom .lorem-box {
+                border-radius: 0 20px 20px 0;
+            }
+            .btn-home {
+                top: 12px;
+                left: 12px;
+                width: 42px;
+                height: 42px;
+                padding: 8px;
+            }
+            .btn-home svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
 
-            body main section h1 span.sm {
-                display: inline;
+        @media (max-width: 600px) {
+            .grid-bottom .card {
+                flex-direction: column;
+            }
+            .grid-bottom .card > div:first-child {
+                flex: 0 0 auto;
+                max-width: 100%;
+                border-radius: 20px 20px 0 0;
+                border-right: 3px solid rgba(255, 255, 255, 0.8);
+                border-bottom: none;
+            }
+            .grid-bottom .card .image-slot {
+                border-radius: 20px 20px 0 0;
+            }
+            .grid-bottom .lorem-box {
+                border-radius: 0 0 20px 20px;
+                border-left: 4px solid rgba(255, 255, 255, 0.8);
+                border-top: none;
+                min-height: 100px;
+            }
+            .btn-home {
+                top: 10px;
+                left: 10px;
+                width: 38px;
+                height: 38px;
+                padding: 6px;
+            }
+            .btn-home svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-barts {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .main-title {
+                font-size: 2.2rem;
+                -webkit-text-stroke: 2px #1b3b6b;
+                text-shadow: 3px 3px 0 #1b3b6b;
+            }
+            .btn-home {
+                top: 8px;
+                left: 8px;
+                width: 34px;
+                height: 34px;
+                padding: 5px;
+            }
+            .btn-home svg {
+                width: 16px;
+                height: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <main>
-        <header>
-            <figure class="logo"></figure>
-        </header>
-        <section>
-            <h1>
-                Media Queries
-                <span class="lg"> (> 1024px) 💻Desktop </span>
-                <span class="md"> (< 1024px) 🖥️Tablet </span>
-                <span class="sm"> (< 780px) 📱Mobile </span>
-            </h1>
-            <p>
-                
-        </section>
-    </main>
+    <div class="gallery-wrapper">
+        <a href="../03-css/index.html" class="btn-home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+                <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+            </svg>
+        </a>
+
+        <h1 class="main-title">THE SIMPSONS</h1>
+        <div style="display: flex; justify-content: center;">
+        </div>
+
+        <div class="grid-barts">
+            <div class="card">
+                <div class="image-slot">
+                    <img src="../src/imgs/bart simpson.png" alt="Bart Simpson 1">
+                </div>
+                <div class="card-footer">BART 1</div>
+            </div>
+            
+            <div class="card">
+                <div class="image-slot">
+                    <img src="../src/imgs/bart(3).png" alt="Bart Simpson 2">
+                </div>
+                <div class="card-footer">BART 2</div>
+            </div>
+            
+            <div class="card">
+                <div class="image-slot">
+                    <img src="../src/imgs/bart simpson.png" alt="Bart Simpson 3">
+                </div>
+                <div class="card-footer">BART 3</div>
+            </div>
+            
+            <div class="card">
+                <div class="image-slot">
+                    <img src="../src/imgs/bart(3).png" alt="Bart Simpson 4">
+                </div>
+                <div class="card-footer">BART 4</div>
+            </div>
+        </div>
+
+        <div class="grid-bottom">
+            <div class="card">
+                <div>
+                    <div class="image-slot">
+                        <img src="../src/imgs/homer(2).jpg" alt="Homer Simpson">
+                    </div>
+                </div>
+                <div class="lorem-box">
+                    <div style="width: 100%;">
+                        <h3>HOMER SIMPSON</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate enim expedita laboriosam, tenetur eligendi dolore beatae, eius explicabo et nisi praesentium? Nihil vitae sit possimus repudiandae doloribus soluta distinctio quo? Velit hic, earum sapiente itaque nemo delectus magnam at reprehenderit ex quasi, animi reiciendis quas explicabo molestias totam. Voluptatibus quibusdam neque cumque officia veniam nam ea facilis ex perspiciatis quis dignissimos repellat reprehenderit omnis sint temporibus error eius placeat explicabo sunt, a cum? Nulla, est ipsa recusandae doloribus officia impedit aperiam ex? Nihil itaque accusantium mollitia eaque molestias a doloremque aspernatur alias iure voluptates animi architecto, dicta repudiandae ad laudantium!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="image-slot">
+                        <img src="../src/imgs/marge(2).png" alt="Marge Simpson">
+                    </div>
+                </div>
+                <div class="lorem-box">
+                    <div style="width: 100%;">
+                        <h3>MARGE SIMPSON</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam assumenda, cum asperiores accusamus esse voluptatem ea, aliquam dolor veniam mollitia eius eveniet? Et vero quidem necessitatibus, adipisci, minus obcaecati fuga dicta, quaerat voluptatibus recusandae culpa qui est reiciendis illum possimus dignissimos eligendi excepturi distinctio laboriosam saepe voluptates ut at? Dignissimos ad deserunt cupiditate cumque quisquam ratione nulla consequatur qui possimus rem! Deserunt aliquid ducimus voluptates aspernatur repellat minima amet eligendi cum itaque tempore dolor similique officiis soluta omnis, fugit eum corrupti. Ipsa ut laborum voluptatibus! Est provident quos, doloremque quod ratione, veniam, qui modi autem eum repellendus nobis aperiam? Enim.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

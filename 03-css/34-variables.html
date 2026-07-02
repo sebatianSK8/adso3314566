@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34-Variables</title>
+    <link rel="stylesheet" href="../src/css/03-CSS.css">
+    <style>
+        :root {
+            --color-primary: #4fc3f7;
+            --color-secondary: #ffb74d;
+            --color-text: #e0e0e0;
+            --color-text-muted: #888888;
+            --color-border: #2a2a4e;
+            --spacing-medium: 1rem;
+            --spacing-large: 1.5rem;
+            --font-family-base: 'Poppins', sans-serif;
+            --font-family-mono: 'Roboto Mono', monospace;
+        }
+
+        @font-face {
+            font-family: 'MiFuentePersonalizada';
+            src: url('fonts/mi-fuente.woff2') format('woff2'),
+                url('fonts/mi-fuente.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MiFuentePersonalizada';
+            src: url('fonts/mi-fuente-bold.woff2') format('woff2'),
+                url('fonts/mi-fuente-bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .font-poppins {
+            font-family: var(--font-family-base);
+        }
+
+        .font-roboto-mono {
+            font-family: var(--font-family-mono);
+        }
+
+        .font-custom {
+            font-family: 'MiFuentePersonalizada', var(--font-family-base);
+        }
+
+        .weight-300 {
+            font-weight: 300;
+        }
+
+        .weight-400 {
+            font-weight: 400;
+        }
+
+        .weight-700 {
+            font-weight: 700;
+        }
+
+        .style-italic {
+            font-style: italic;
+        }
+
+        .color-primary {
+            color: var(--color-primary);
+        }
+
+        .color-secondary {
+            color: var(--color-secondary);
+        }
+
+        .ejercicio {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .ejercicio:last-child {
+            border-bottom: none;
+        }
+
+        .ejercicio .code-block {
+            font-family: var(--font-family-mono);
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin: 0.5rem 0;
+            line-height: 1.6;
+            white-space: pre;
+        }
+
+        .ejercicio p {
+            color: var(--color-text-muted);
+            margin: 0.3rem 0;
+        }
+
+        .ejercicio-titulo {
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
+            color: var(--color-text);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .ejercicio-subtitulo {
+            text-align: center;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-variables {
+            padding: 1rem 0;
+        }
+
+        .demo-variables p {
+            color: var(--color-text-muted);
+            margin: 0.2rem 0;
+        }
+
+        .demo-variables .highlight {
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>34 Variables</h1>
+            <h2>The var() function is used to insert the value of a CSS variable.</h2>
+        </header>
+        <section>
+
+            <div class="ejercicio">
+                <div class="code-block">
+                    :root {
+                    --color-primary: #4fc3f7;
+                    --color-secondary: #ffb74d;
+                    --color-text: #e0e0e0;
+                    --spacing-medium: 1rem;
+                    --font-family-base: 'Poppins', sans-serif;
+                    }
+                </div>
+                <p>🔹 Variables declaradas en <strong>:root</strong> para uso global.</p>
+            </div>
+
+            <div class="ejercicio">
+                <div class="code-block">
+                    .elemento {
+                    color: var(--color-primary);
+                    padding: var(--spacing-medium);
+                    font-family: var(--font-family-base);
+                    }
+                </div>
+                <p style="color: var(--color-primary);">🔹 Texto con <strong>--color-primary</strong></p>
+                <p style="color: var(--color-secondary);">🔹 Texto con <strong>--color-secondary</strong></p>
+                <p style="font-family: var(--font-family-mono); color: var(--color-text-muted);">🔹 Texto con
+                    <strong>--font-family-mono</strong></p>
+            </div>
+
+            <div class="ejercicio">
+                <div class="code-block">
+                    /* Cambia el valor en :root y afecta a todo */
+                    --color-primary: #4fc3f7;
+                </div>
+
+                <div class="demo-variables">
+                    <p>🔹 <strong>Tarjeta con variables</strong></p>
+                    <p>Color primario: <span class="highlight">--color-primary</span></p>
+                    <p>Color secundario: <span class="highlight">--color-secondary</span></p>
+                    <p>Espaciado: <span class="highlight">--spacing-medium</span></p>
+                    <p style="margin-top: 0.5rem; color: var(--color-text-muted);">
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33-Web-Fonts</title>
+
+
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        @font-face {
+            font-family: 'MiFuentePersonalizada';
+            src: url('fonts/mi-fuente.woff2') format('woff2'),
+                url('fonts/mi-fuente.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MiFuentePersonalizada';
+            src: url('fonts/mi-fuente-bold.woff2') format('woff2'),
+                url('fonts/mi-fuente-bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-roboto-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .font-custom {
+            font-family: 'MiFuentePersonalizada', 'Poppins', sans-serif;
+        }
+
+        .weight-300 {
+            font-weight: 300;
+        }
+
+        .weight-400 {
+            font-weight: 400;
+        }
+
+        .weight-700 {
+            font-weight: 700;
+        }
+
+        .style-italic {
+            font-style: italic;
+        }
+
+        .color-primary {
+            color: #4fc3f7;
+        }
+
+        .color-secondary {
+            color: #ffb74d;
+        }
+
+        .ejercicio {
+            padding: 1rem 0;
+            border-bottom: 1px solid #2a2a4e;
+        }
+
+        .ejercicio:last-child {
+            border-bottom: none;
+        }
+
+        .ejercicio .label {
+            display: inline-block;
+            background: #2a2a4e;
+            color: #b0b0b0;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ejercicio .code {
+            background: #0a0a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            margin: 0.5rem 0;
+            border-left: 3px solid #4fc3f7;
+        }
+
+        .ejercicio h3 {
+            color: #c8c8c8;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .ejercicio p {
+            color: #a0a0a0;
+            margin: 0.3rem 0;
+        }
+
+        .ejercicio-titulo {
+            text-align: center;
+            padding: 2rem 0 0.5rem;
+            color: #e0e0e0;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .ejercicio-subtitulo {
+            text-align: center;
+            color: #888888;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>33 Web Fonts</h1>
+            <h2>Use fonts that are not installed on the user's computer.</h2>
+        </header>
+
+        <section>
+
+            <div class="ejercicio font-poppins">
+                <span class="label">Google Fonts</span>
+                <h3>Poppins</h3>
+                <div class="code">font-family: 'Poppins', sans-serif;</div>
+                <p class="weight-300">🔹 Light (300): The quick brown fox jumps over the lazy dog.</p>
+                <p class="weight-400">🔹 Regular (400): The quick brown fox jumps over the lazy dog.</p>
+                <p class="weight-700">🔹 Bold (700): The quick brown fox jumps over the lazy dog.</p>
+            </div>
+
+            <div class="ejercicio font-roboto-mono">
+                <span class="label">Google Fonts</span>
+                <h3>Roboto Mono</h3>
+                <div class="code">font-family: 'Roboto Mono', monospace;</div>
+                <p class="weight-400">🔹 Regular (400): The quick brown fox jumps over the lazy dog.</p>
+                <p class="weight-700">🔹 Bold (700): The quick brown fox jumps over the lazy dog.</p>
+                <p class="style-italic">🔹 Italic: The quick brown fox jumps over the lazy dog.</p>
+            </div>
+
+            <div class="ejercicio font-custom">
+                <span class="label">@font-face</span>
+                <h3>Mi Fuente Personalizada</h3>
+                <div class="code">
+                    @font-face {<br>
+                    &nbsp;&nbsp;font-family: 'MiFuentePersonalizada';<br>
+                    &nbsp;&nbsp;src: url('fonts/mi-fuente.woff2') format('woff2');<br>
+                    &nbsp;&nbsp;font-weight: 400;<br>
+                    &nbsp;&nbsp;font-display: swap;<br>
+                    }
+                </div>
+                <p class="weight-400">🔹 Regular: The quick brown fox jumps over the lazy dog.</p>
+                <p class="weight-700">🔹 Bold: The quick brown fox jumps over the lazy dog.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
