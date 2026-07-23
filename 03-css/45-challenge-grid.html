@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45-challenge-grid</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        /* ===== ESTILOS GENERALES ===== */
+        /* ... keeping the general styles ... */
+        
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                "img1 img2 img3"
+                "img4 img2 img5"
+                "img6 img6 img7";
+            grid-gap: 10px;
+            max-width: 600px;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .img-1 { grid-area: img1; }
+        .img-2 { grid-area: img2; }
+        .img-3 { grid-area: img3; }
+        .img-4 { grid-area: img4; }
+        .img-5 { grid-area: img5; }
+        .img-6 { grid-area: img6; }
+        .img-7 { grid-area: img7; }
+
+        .wrapper div {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            /* Ocultamos el número "1", "2"... */
+            color: transparent;
+            text-shadow: none;
+            /* Para que no se vea el texto */
+            font-size: 0;
+            /* Si quieres que se vea el número encima, cambia color y font-size */
+        }
+
+        /* ===== IMÁGENES DE EJEMPLO (CAMBIA AQUÍ LAS URLS) ===== */
+        .img-1 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-2 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-3 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-4 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-5 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-6 { background-image: url(../src/imgs/tonyhawk.jpg); }
+        .img-7 { background-image: url(../src/imgs/tonyhawk.jpg); }
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+            <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        </svg>
+    </a>
+    <main>
+        <header>
+            <h1>45-challenge-grid</h1>
+            <h2>Irregular Gallery - Grid Template Areas</h2>
+        </header>
+        <section>
+            <div class="wrapper">
+                <div class="img-1">1</div>
+                <div class="img-2">2</div>
+                <div class="img-3">3</div>
+                <div class="img-4">4</div>
+                <div class="img-5">5</div>
+                <div class="img-6">6</div>
+                <div class="img-7">7</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
