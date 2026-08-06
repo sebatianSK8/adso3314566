@@ -1,0 +1,64 @@
+6 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-types-objects</title>
+    <link rel="stylesheet" href="/src/css/04-js.css">
+    <style>
+    </style>
+</head>
+<body>
+<a href="../04-js/" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+<main>
+    <header>
+        <h1>06-types-objects</h1>
+        <h2>
+            Understand and work with different object types.
+        </h2>
+    </header>
+    <section>
+     <ul class="objects"></ul>
+    </section>
+</main>
+<script>
+    //Elements
+    const objs = document.querySelector('.objects');
+
+    //Object String
+    const string   = new String ('Javascript 💛');
+    objs.innerHTML = `<li>${string} -> Objects: 
+                          ${string.constructor.name} </li>`;
+    
+    //Objects Number
+    const number    = new Number (256);
+    objs.innerHTML += `<li>${number} -> Objects:
+                           ${number.constructor.name}</li>`;
+
+    //Objects Boolean
+    const bool      = new Boolean(512>128);
+    objs.innerHTML += `<li>${bool} -> Objects: 
+                          ${bool.constructor.name} </li>`;
+
+    //Objects Array
+    const arr       = new Array('🚕', '🚑', '🚲', '🚠', '🚁');
+    objs.innerHTML += `<li>${arr} -> Objects: 
+                          ${arr.constructor.name} </li>`;
+
+     //Objects Date
+    const dt       = new Date('12/12/2026');
+    objs.innerHTML += `<li> ${dt.getFullYear()} -> Objects: 
+                            ${dt.constructor.name} </li>`;
+
+    //Objects Object
+    const obj       = new Object('Vehicle');
+    objs.innerHTML += `<li> ${obj} -> Objects: 
+                            ${obj.constructor.name} </li>`;
+</script>
+</body>
+</html>
