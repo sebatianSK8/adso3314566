@@ -1,4 +1,3 @@
-7
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,50 @@
     <title>07-class-vehicle</title>
     <link rel="stylesheet" href="/src/css/04-js.css">
     <style>
+        .vehicle {
+            &.dark {
+                background-color: #13171A;
+                header {
+                    button.mode {
+                        background: url(../src/imgs/vehicles/Mode-dark.png) no-repeat center /cover;
+                    }
+                }
+            }
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            margin: 0 auto;
+            height: 576px;
+            padding: 12px;
+            width: 356px;
+        }
+        .vehicle header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .vehicle header figure {
+            background: url(../src/imgs/vehicles/180f6303-0393-48ad-ae80-9566b05ab46b\ 1.png) no-repeat center /cover;
+            height: 49px;
+            margin: 0;
+            width: 220px;
+        }
+        .vehicle header button.mode {
+            background: url(../src/imgs/vehicles/Mode-dark.png) no-repeat center /cover;
+            border: none;
+            cursor: pointer;
+            height: 60px;
+            transition: transform 0.4s ease-in;
+            width: 100px;
+            &.hover {
+                transform: scale(1.1);
+            }
+        }
     </style>
 </head>
 <body>
 <a href="../04-js/" class="btn-home">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
-        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H152Zm96,88H112V160h32Z"/>
     </svg>
 </a>
 <main>
@@ -24,6 +61,31 @@
     </header>
     <section>
         <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/design/7JCf3DoVUNE0BrrzXiyQ2e/Sin-t%C3%ADtulo?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+        <div class="vehicle">
+            <header>
+                <figure class="logo"></figure>
+                <button class="mode"></button>
+            </header>
+            <nav>
+                <button class="prev"></button>
+                <figure class="brand"></figure>
+                <button class="next"></button>
+            </nav>
+        </div>
+    </section>
+</main>
+<script>
+    const vhc = document.querySelector('.vehicle');
+    const mode = document.querySelector('.mode');
+    const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    const updateTheme = (e) => vhc.classList.toggle('dark', e.matches);
+
+    darkMode.addEventListener('change', updateTheme);
+    updateTheme(darkMode);
+
+    mode.addEventListener('click', function() {
+        vhc.classList.toggle('dark');
+    });
 </script>
 </body>
 </html>
