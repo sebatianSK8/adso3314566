@@ -1,91 +1,1720 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>07-class-vehicle</title>
-    <link rel="stylesheet" href="/src/css/04-js.css">
-    <style>
-        .vehicle {
-            &.dark {
-                background-color: #13171A;
-                header {
-                    button.mode {
-                        background: url(../src/imgs/vehicles/Mode-dark.png) no-repeat center /cover;
-                    }
-                }
-            }
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            margin: 0 auto;
-            height: 576px;
-            padding: 12px;
-            width: 356px;
-        }
-        .vehicle header {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-        .vehicle header figure {
-            background: url(../src/imgs/vehicles/180f6303-0393-48ad-ae80-9566b05ab46b\ 1.png) no-repeat center /cover;
-            height: 49px;
-            margin: 0;
-            width: 220px;
-        }
-        .vehicle header button.mode {
-            background: url(../src/imgs/vehicles/Mode-dark.png) no-repeat center /cover;
-            border: none;
-            cursor: pointer;
-            height: 60px;
-            transition: transform 0.4s ease-in;
-            width: 100px;
-            &.hover {
-                transform: scale(1.1);
-            }
-        }
-    </style>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>07-class-vehicle</title>
+
+  <!-- =====================================================
+       CSS GENERAL DEL PROYECTO
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="../src/css/04-js.css"
+  />
+
+  <link
+    rel="shortcut icon"
+    href="../src/imgs/vehicles/180f6303-0393-48ad-ae80-9566b05ab46b 1.png"
+    type="image/x-icon"
+  />
+
+  <!-- =====================================================
+       ESTILOS DE LA ACTIVIDAD VEHICLE
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       AJUSTES GENERALES
+    ====================================================== */
+
+    .content-section {
+      height: fit-content !important;
+      overflow-y: visible !important;
+    }
+
+    main {
+      max-height: fit-content;
+    }
+
+    body {
+      overflow-y: scroll;
+    }
+
+
+    /* =====================================================
+       VEHICLE
+    ====================================================== */
+
+    div.vehicle {
+
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 412px;
+      min-height: 870px;
+
+      padding: 1rem;
+
+      border-radius: 15px;
+
+      background-color: #020207;
+
+      border: 1px solid #292431;
+
+      overflow: hidden;
+
+      color: white;
+
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+    }
+
+
+    /* =====================================================
+       MODO OSCURO
+    ====================================================== */
+
+    div.vehicle.dark {
+      background-color: #020207;
+      border-color: #292431;
+      color: white;
+    }
+
+
+    /* =====================================================
+       MODO CLARO
+    ====================================================== */
+
+    div.vehicle:not(.dark) {
+
+      background-color: #f3f2f7;
+
+      border-color: #d8d4e3;
+
+      color: #17151d;
+
+    }
+
+
+    div.vehicle:not(.dark) figure.brand,
+    div.vehicle:not(.dark) .vehicle-info figure,
+    div.vehicle:not(.dark) .vehicle-controls button,
+    div.vehicle:not(.dark) button.mode,
+    div.vehicle:not(.dark) nav button {
+
+      background-color: #ffffff;
+
+      color: #17151d;
+
+    }
+
+
+    div.vehicle:not(.dark) .info-value,
+    div.vehicle:not(.dark) .control-label {
+
+      color: #17151d;
+
+    }
+
+
+    div.vehicle:not(.dark) .info-label,
+    div.vehicle:not(.dark) .vehicle-status {
+
+      color: #6f6a78;
+
+    }
+
+
+    /* =====================================================
+       HEADER DEL VEHÍCULO
+    ====================================================== */
+
+    div.vehicle header.vehicle-header {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      height: 70px;
+
+    }
+
+
+    /* =====================================================
+       LOGO - LIMPIO (SIN CAJA)
+    ====================================================== */
+
+    div.vehicle figure.logo {
+
+      width: 190px;
+
+      height: 58px;
+
+      margin: 0;
+
+      border: none;
+
+      border-radius: 0;
+
+      background-color: transparent;
+
+      background-image:
+        url("../src/imgs/vehicles/180f6303-0393-48ad-ae80-9566b05ab46b 1.png");
+
+      background-repeat: no-repeat;
+
+      background-position: center;
+
+      background-size: contain;
+
+      box-shadow: none;
+
+    }
+
+    /* LOGO - MODO CLARO */
+    div.vehicle:not(.dark) figure.logo {
+
+      background-color: transparent;
+
+      background-image:
+        url("../src/imgs/vehicles/180f6303-0393-48ad-ae80-9566b05ab46b 1.png");
+
+      border: none;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       BOTÓN MODE
+    ====================================================== */
+
+    div.vehicle button.mode {
+
+      width: auto;
+
+      padding: 0 12px;
+
+      height: 43px;
+
+      margin: 0;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background-color: transparent;
+
+      color: inherit;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 6px;
+
+      transition: 0.3s;
+
+    }
+
+
+    div.vehicle button.mode:hover {
+
+      background-color: rgba(176, 38, 255, 0.1);
+
+    }
+
+
+    .mode-icon {
+
+      color: #b026ff;
+
+      font-size: 20px;
+
+    }
+
+    div.vehicle:not(.dark) .mode-icon {
+
+      color: #ff2d95;
+
+    }
+
+
+    /* =====================================================
+       NAVEGACIÓN
+    ====================================================== */
+
+    div.vehicle nav {
+
+      display: grid;
+
+      grid-template-columns:
+        56px 1fr 56px;
+
+      gap: 16px;
+
+      height: 58px;
+
+      margin-top: 18px;
+
+    }
+
+
+    /* =====================================================
+       BOTONES PREV / NEXT
+    ====================================================== */
+
+    div.vehicle nav button {
+
+      border: none;
+
+      background-color: #111018;
+
+      color: white;
+
+      cursor: pointer;
+
+      border-radius: 8px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: 0.3s;
+
+    }
+
+    /* -------------------------
+       MODO OSCURO
+    ------------------------- */
+
+    div.vehicle.dark nav button:hover {
+      background-color: #191520;
+    }
+
+    div.vehicle.dark nav button:active {
+      background-color: #191520;
+    }
+
+    /* -------------------------
+       MODO CLARO
+    ------------------------- */
+
+    div.vehicle:not(.dark) nav button {
+
+      background-color: #ffffff;
+
+      color: #17151d;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    }
+
+    div.vehicle:not(.dark) nav button:hover {
+      background-color: #f0e6ff;
+      color: #17151d;
+    }
+
+    div.vehicle:not(.dark) nav button:active {
+      background-color: #f0e6ff;
+      color: #17151d;
+    }
+
+    /* -------------------------
+       FLECHAS
+    ------------------------- */
+
+    .arrow {
+
+      color: #b026ff;
+
+      font-size: 30px;
+
+      line-height: 25px;
+
+    }
+
+    div.vehicle:not(.dark) .arrow {
+
+      color: #b026ff;
+
+    }
+
+    .nav-text {
+
+      font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       NOMBRE DE LA MARCA
+    ====================================================== */
+
+    div.vehicle figure.brand {
+
+      height: 58px;
+
+      margin: 0;
+
+      background-color: #111018;
+
+      border-radius: 8px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: white;
+
+    }
+
+    div.vehicle:not(.dark) figure.brand {
+
+      background-color: #ffffff;
+
+      color: #17151d;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    }
+
+
+    div.vehicle figure.brand span {
+
+      font-size: 16px;
+
+      font-weight: 600;
+
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN DEL VEHÍCULO
+    ====================================================== */
+
+    .vehicle-info {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+
+      margin-top: 18px;
+
+    }
+
+
+    /* =====================================================
+       TARJETAS DE INFORMACIÓN
+    ====================================================== */
+
+    .vehicle-info figure {
+
+      height: 85px;
+
+      margin: 0;
+
+      padding: 5px;
+
+      background-color: #111018;
+
+      border-radius: 8px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 2px;
+
+    }
+
+    div.vehicle:not(.dark) .vehicle-info figure {
+
+      background-color: #ffffff;
+
+      color: #17151d;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    }
+
+
+    /* =====================================================
+       ICONOS SVG
+    ====================================================== */
+
+    .vehicle-info figure img {
+
+      width: 60px;
+
+      height: 30px;
+
+      object-fit: contain;
+
+    }
+
+
+    .info-label {
+
+      color: #77727f;
+
+      font-size: 13px;
+
+    }
+
+
+    .info-value {
+
+      color: white;
+
+      font-size: 13px;
+
+    }
+
+
+    /* =====================================================
+       ESCENARIO
+    ====================================================== */
+
+    .race-scene {
+
+      width: calc(100% + 32px);
+
+      height: 220px;
+
+      margin-left: -16px;
+
+      margin-top: 18px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background-color: #05091c;
+
+      border-radius: 8px;
+
+    }
+
+
+    /* =====================================================
+       FONDO DE TOKYO
+    ====================================================== */
+
+    .race-background {
+
+      position: absolute;
+
+      width: 100%;
+
+      height: 100%;
+
+      top: 0;
+
+      left: 0;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      z-index: 1;
+
+    }
+
+
+    /* =====================================================
+       VEHÍCULO
+    ====================================================== */
+
+    .car {
+
+      position: absolute;
+
+      width: 230px;
+
+      height: 100px;
+
+      left: 50%;
+
+      bottom: 18px;
+
+      transform:
+        translateX(-50%);
+
+      z-index: 5;
+
+      transition:
+        transform 0.5s ease;
+
+    }
+
+
+    .car img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      background: transparent;
+
+    }
+
+
+    /* =====================================================
+       MOVIMIENTO
+    ====================================================== */
+
+    .car.forward {
+
+      transform:
+        translateX(
+          calc(-50% + 30px)
+        );
+
+    }
+
+
+    .car.back {
+
+      transform:
+        translateX(
+          calc(-50% - 30px)
+        );
+
+    }
+
+
+    .car.moving {
+
+      animation:
+        vibration 0.12s
+        infinite alternate;
+
+    }
+
+
+    @keyframes vibration {
+
+      from {
+        margin-top: 0;
+      }
+
+      to {
+        margin-top: -2px;
+      }
+
+    }
+
+
+    /* =====================================================
+       CONTROLES
+    ====================================================== */
+
+    .vehicle-controls {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 6px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .vehicle-controls button {
+
+      height: 63px;
+
+      border: none;
+
+      background-color: #111018;
+
+      color: white;
+
+      cursor: pointer;
+
+      border-radius: 8px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 5px;
+
+      transition: 0.25s;
+
+    }
+
+    div.vehicle:not(.dark) .vehicle-controls button {
+
+      background-color: #ffffff;
+
+      color: #17151d;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    }
+
+
+    .vehicle-controls button:hover {
+
+      background-color: #191520;
+
+    }
+
+    div.vehicle:not(.dark) .vehicle-controls button:hover {
+
+      background-color: #f0e6ff;
+
+    }
+
+
+    .vehicle-controls button.active {
+
+      background-color: #21122b;
+
+      box-shadow:
+
+        inset 0 0 0 1px
+        #fffc54,
+
+        0 0 10px
+        rgba(255, 252, 96, 0.25);
+
+    }
+
+
+    .control-icon {
+
+      color: #b026ff;
+
+      font-size: 24px;
+
+      line-height: 24px;
+
+    }
+
+    /* =================================
+       CONTROLES - MODO CLARO
+    ================================= */
+
+    div.vehicle:not(.dark) #on .control-icon {
+      color: #39ff14;
+    }
+
+    div.vehicle:not(.dark) #forward .control-icon {
+      color: #fff06b;
+    }
+
+    div.vehicle:not(.dark) #stop .control-icon {
+      color: #ff2d95;
+    }
+
+    div.vehicle:not(.dark) #back .control-icon {
+      color: #b026ff;
+    }
+
+    div.vehicle:not(.dark) #off .control-icon {
+      color: #ff1744;
+    }
+
+
+    .control-label {
+
+      font-size: 12px;
+
+      color: white;
+
+    }
+
+    div.vehicle:not(.dark) .control-label {
+
+      color: #17151d;
+
+    }
+
+
+    /* =====================================================
+       ESTADO
+    ====================================================== */
+
+    .vehicle-status {
+
+      text-align: center;
+
+      margin-top: 12px;
+
+      font-size: 11px;
+
+      color: #77727f;
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 500px) {
+
+      div.vehicle {
+
+        width: 100%;
+
+        max-width: 412px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
-<a href="../04-js/" class="btn-home">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
-        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H152Zm96,88H112V160h32Z"/>
+
+  <!-- =====================================================
+       BOTÓN VOLVER
+  ====================================================== -->
+
+  <a
+    class="btn-home"
+    href="../04-js/index.html"
+    title="Volver a los ejercicios"
+  >
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="white"
+      viewBox="0 0 256 256"
+    >
+
+      <path
+        d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+      </path>
+
     </svg>
-</a>
-<main>
-    <header>
-        <h1>07-class-vehicle</h1>
-        <h2>
-            Create and manipulate a vehicle object with properties.
-        </h2>
-    </header>
-    <section>
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/design/7JCf3DoVUNE0BrrzXiyQ2e/Sin-t%C3%ADtulo?node-id=0-1&embed-host=share" allowfullscreen></iframe>
-        <div class="vehicle">
-            <header>
-                <figure class="logo"></figure>
-                <button class="mode"></button>
-            </header>
-            <nav>
-                <button class="prev"></button>
-                <figure class="brand"></figure>
-                <button class="next"></button>
-            </nav>
+
+  </a>
+
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+  ====================================================== -->
+
+  <main>
+
+      <header class="header">
+
+    <h1>07-class-vehicle</h1>
+
+    <h2>
+      Create and manipulate a vehicle object with properties.
+    </h2>
+
+  </header>
+
+    <section class="content-section">
+
+      <div class="vehicle dark">
+
+
+        <!-- ===============================================
+             HEADER
+        ================================================ -->
+
+        <header class="vehicle-header">
+
+          <figure class="logo"></figure>
+
+          <button
+            class="mode"
+            id="mode"
+          >
+
+            <span
+              class="mode-icon"
+              id="mode-icon"
+            >
+              ☼
+            </span>
+
+            <span id="mode-text">
+              Mode
+            </span>
+
+          </button>
+
+        </header>
+
+
+        <!-- ===============================================
+             NAVEGACIÓN
+        ================================================ -->
+
+        <nav>
+
+          <button
+            class="prev"
+            id="prev"
+          >
+
+            <span class="arrow">
+              ←
+            </span>
+
+            <span class="nav-text">
+              Prev
+            </span>
+
+          </button>
+
+
+          <figure class="brand">
+
+            <span id="brand">
+              CHEVROLET
+            </span>
+
+          </figure>
+
+
+          <button
+            class="next"
+            id="next"
+          >
+
+            <span class="arrow">
+              →
+            </span>
+
+            <span class="nav-text">
+              Next
+            </span>
+
+          </button>
+
+        </nav>
+
+
+        <!-- ===============================================
+             INFORMACIÓN
+        ================================================ -->
+
+        <div class="vehicle-info">
+
+          <figure>
+
+            <img
+              src="../src/imgs/vehicles/Group 8.svg"
+              alt="Model"
+            />
+
+            <span class="info-label">
+              Model
+            </span>
+
+            <strong
+              class="info-value"
+              id="model"
+            >
+              Chevrolet 
+            </strong>
+
+          </figure>
+
+
+          <figure>
+
+            <img
+              src="../src/imgs/vehicles/Refer.svg"
+              alt="Refer"
+            />
+
+            <span class="info-label">
+              Refer
+            </span>
+
+            <strong
+              class="info-value"
+              id="refer"
+            >
+              Monte Carlo
+            </strong>
+
+          </figure>
+
+
+          <figure>
+
+            <img
+              src="../src/imgs/vehicles/Color.svg"
+              alt="Color"
+            />
+            
+
+            <span class="info-label">
+              Color
+            </span>
+
+            <strong
+              class="info-value"
+              id="color"
+            >
+              Yellow
+            </strong>
+
+          </figure>
+
         </div>
+
+        <!-- ===============================================
+             ESCENARIO
+        ================================================ -->
+
+        <div class="race-scene">
+
+          <img
+            class="race-background"
+            src="../src/imgs/vehicles/escenarioNight.svg"
+            alt="Nascar Night"
+          />
+
+
+          <div
+            class="car"
+            id="car"
+          >
+
+            <img
+              id="car-image"
+              src="../src/imgs/vehicles/Chevy.svg"
+              alt="Chevrolet Vehicle"
+            />
+
+          </div>
+
+        </div>
+
+
+        <!-- ===============================================
+             CONTROLES
+        ================================================ -->
+
+        <div class="vehicle-controls">
+
+          <button id="on">
+
+            <span class="control-icon">
+              ⏻
+            </span>
+
+            <span class="control-label">
+              On
+            </span>
+
+          </button>
+
+
+          <button id="forward">
+
+            <span class="control-icon">
+              ▶▶
+            </span>
+
+            <span class="control-label">
+              Forw
+            </span>
+
+          </button>
+
+
+          <button id="stop">
+
+            <span class="control-icon">
+              ▮▮
+            </span>
+
+            <span class="control-label">
+              Stop
+            </span>
+
+          </button>
+
+
+          <button id="back">
+
+            <span class="control-icon">
+              ◀◀
+            </span>
+
+            <span class="control-label">
+              Back
+            </span>
+
+          </button>
+
+
+          <button id="off">
+
+            <span class="control-icon">
+              ⏻
+            </span>
+
+            <span class="control-label">
+              Off
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- ===============================================
+             ESTADO
+        ================================================ -->
+
+        <div
+          class="vehicle-status"
+          id="status"
+        >
+          Vehicle OFF
+        </div>
+
+
+      </div>
+
     </section>
-</main>
-<script>
-    const vhc = document.querySelector('.vehicle');
-    const mode = document.querySelector('.mode');
-    const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    const updateTheme = (e) => vhc.classList.toggle('dark', e.matches);
 
-    darkMode.addEventListener('change', updateTheme);
-    updateTheme(darkMode);
+  </main>
 
-    mode.addEventListener('click', function() {
-        vhc.classList.toggle('dark');
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
+
+    const vhc =
+      document.querySelector(".vehicle");
+
+    const mode =
+      document.querySelector("#mode");
+
+    const modeIcon =
+      document.querySelector("#mode-icon");
+
+    const modeText =
+      document.querySelector("#mode-text");
+
+    const lbrand =
+      document.querySelector("#brand");
+
+    const lmodel =
+      document.querySelector("#model");
+
+    const lrefer =
+      document.querySelector("#refer");
+
+    const lcolor =
+      document.querySelector("#color");
+
+    const car =
+      document.querySelector("#car");
+
+    const carImage =
+      document.querySelector("#car-image");
+
+    const status =
+      document.querySelector("#status");
+
+
+    /* =====================================================
+       BOTONES
+    ====================================================== */
+
+    const prev =
+      document.querySelector("#prev");
+
+    const next =
+      document.querySelector("#next");
+
+    const on =
+      document.querySelector("#on");
+
+    const forward =
+      document.querySelector("#forward");
+
+    const stop =
+      document.querySelector("#stop");
+
+    const back =
+      document.querySelector("#back");
+
+    const off =
+      document.querySelector("#off");
+
+
+    /* =====================================================
+       ÍNDICE
+    ====================================================== */
+
+    let index = 0;
+
+
+    /* =====================================================
+       OBJETOS VEHICLE
+       (Rutas corregidas según la estructura de tu proyecto)
+    ====================================================== */
+
+    const vehicles = {
+
+      attrs: [
+
+        {
+          brand: "CHEVROLET",
+          refer: "MONTE CARLO",
+          model: "Chevrolet",
+          color: "Yellow",
+          image:
+            "../src/imgs/vehicles/Chevy.svg"
+        },
+
+        {
+          brand: "CHEVROLET",
+          refer: "MONTE CARLO",
+          model: "Chevrolet",
+          color: "Yellow",
+          image:
+            "../src/imgs/vehicles/Chevy-2.svg"
+        },
+
+        {
+          brand: "CHEVROLET",
+          refer: "MONTE CARLO",
+          model: "Chevrolet",
+          color: "Yellow",
+          image:
+            "../src/imgs/vehicles/Chevy-3.svg"
+        }
+
+      ]
+
+    };
+
+
+    /* =====================================================
+       ESTADO DEL VEHÍCULO
+    ====================================================== */
+
+    let vehicleOn = false;
+
+
+    /* =====================================================
+       CLASE VEHICLE
+    ====================================================== */
+
+    class Vehicle {
+
+      constructor(
+        brand,
+        refer,
+        model,
+        color,
+        image
+      ) {
+
+        this.brand = brand;
+
+        this.refer = refer;
+
+        this.model = model;
+
+        this.color = color;
+
+        this.image = image;
+
+        this.displayData();
+
+      }
+
+
+      /* =================================================
+         MOSTRAR DATOS DEL OBJETO
+      ================================================== */
+
+      displayData() {
+
+        lbrand.textContent =
+          this.brand;
+
+        lmodel.textContent =
+          this.model;
+
+        lrefer.textContent =
+          this.refer;
+
+        lcolor.textContent =
+          this.color;
+
+        carImage.src =
+          this.image;
+
+        carImage.alt =
+          `${this.brand} ${this.model}`;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       CREAR OBJETO VEHÍCULO INICIAL
+    ====================================================== */
+
+    let currentVehicle =
+      new Vehicle(
+        vehicles.attrs[0].brand,
+        vehicles.attrs[0].refer,
+        vehicles.attrs[0].model,
+        vehicles.attrs[0].color,
+        vehicles.attrs[0].image
+      );
+
+
+    /* =====================================================
+       CAMBIO DE MODO
+    ====================================================== */
+
+    mode.addEventListener(
+      "click",
+      function () {
+
+        vhc.classList.toggle("dark");
+
+        if (vhc.classList.contains("dark")) {
+
+          modeIcon.textContent = "☼";
+
+          modeText.textContent = "Mode";
+
+        } else {
+
+          modeIcon.textContent = "☾";
+
+          modeText.textContent = "Mode";
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       CAMBIAR VEHÍCULO
+    ====================================================== */
+
+    function changeVehicle() {
+
+      currentVehicle =
+        new Vehicle(
+          vehicles.attrs[index].brand,
+          vehicles.attrs[index].refer,
+          vehicles.attrs[index].model,
+          vehicles.attrs[index].color,
+          vehicles.attrs[index].image
+        );
+
+
+      /*
+       * Cuando se cambia de vehículo,
+       * se detiene cualquier movimiento anterior.
+       */
+
+      car.classList.remove("forward");
+
+      car.classList.remove("back");
+
+      car.classList.remove("moving");
+
+
+      /*
+       * Se actualiza el estado visual.
+       */
+
+      status.textContent =
+        vehicleOn
+          ? "Vehicle ON"
+          : "Vehicle OFF";
+
+    }
+
+
+    /* =====================================================
+       NEXT
+    ====================================================== */
+
+    next.addEventListener(
+      "click",
+      function () {
+
+        index++;
+
+
+        /*
+         * Si llegamos al último vehículo,
+         * regresamos al primero.
+         */
+
+        if (
+          index >=
+          vehicles.attrs.length
+        ) {
+
+          index = 0;
+
+        }
+
+
+        changeVehicle();
+
+      }
+    );
+
+
+    /* =====================================================
+       PREV
+    ====================================================== */
+
+    prev.addEventListener(
+      "click",
+      function () {
+
+        index--;
+
+
+        /*
+         * Si estamos antes del primer vehículo,
+         * vamos al último.
+         */
+
+        if (index < 0) {
+
+          index =
+            vehicles.attrs.length - 1;
+
+        }
+
+
+        changeVehicle();
+
+      }
+    );
+
+
+    /* =====================================================
+       ON
+    ====================================================== */
+
+    on.addEventListener(
+      "click",
+      function () {
+
+        vehicleOn = true;
+
+
+        status.textContent =
+          "Vehicle ON";
+
+
+        on.classList.add(
+          "active"
+        );
+
+        off.classList.remove(
+          "active"
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       OFF
+    ====================================================== */
+
+    off.addEventListener(
+      "click",
+      function () {
+
+        vehicleOn = false;
+
+
+        /*
+         * Al apagar el vehículo,
+         * también detenemos su movimiento.
+         */
+
+        car.classList.remove(
+          "forward"
+        );
+
+        car.classList.remove(
+          "back"
+        );
+
+        car.classList.remove(
+          "moving"
+        );
+
+
+        status.textContent =
+          "Vehicle OFF";
+
+
+        off.classList.add(
+          "active"
+        );
+
+        on.classList.remove(
+          "active"
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       FORWARD
+    ====================================================== */
+
+    forward.addEventListener(
+      "click",
+      function () {
+
+        /*
+         * El vehículo debe estar encendido
+         * para poder moverse.
+         */
+
+        if (!vehicleOn) {
+
+          status.textContent =
+            "Turn the vehicle ON first";
+
+          return;
+
+        }
+
+
+        car.classList.remove(
+          "back"
+        );
+
+        car.classList.add(
+          "forward"
+        );
+
+        car.classList.add(
+          "moving"
+        );
+
+
+        status.textContent =
+          "Vehicle moving forward";
+
+      }
+    );
+
+
+    /* =====================================================
+       BACK
+    ====================================================== */
+
+    back.addEventListener(
+      "click",
+      function () {
+
+        /*
+         * El vehículo debe estar encendido.
+         */
+
+        if (!vehicleOn) {
+
+          status.textContent =
+            "Turn the vehicle ON first";
+
+          return;
+
+        }
+
+
+        car.classList.remove(
+          "forward"
+        );
+
+        car.classList.add(
+          "back"
+        );
+
+        car.classList.add(
+          "moving"
+        );
+
+
+        status.textContent =
+          "Vehicle moving backward";
+
+      }
+    );
+
+
+    /* =====================================================
+       STOP
+    ====================================================== */
+
+    stop.addEventListener(
+      "click",
+      function () {
+
+        car.classList.remove(
+          "forward"
+        );
+
+        car.classList.remove(
+          "back"
+        );
+
+        car.classList.remove(
+          "moving"
+        );
+
+
+        status.textContent =
+          "Vehicle stopped";
+
+
+        stop.classList.add(
+          "active"
+        );
+
+
+        setTimeout(
+          function () {
+
+            stop.classList.remove(
+              "active"
+            );
+
+          },
+          300
+        );
+
+      }
+    );
+
+  </script>
+
+
+  <!-- =====================================================
+       THREE.JS
+  ====================================================== -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js">
+  </script>
+
+
+  <!-- =====================================================
+       VANTA
+  ====================================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js">
+  </script>
+
+
+  <script>
+
+    VANTA.NET({
+
+      el: "#vanta-bg",
+
+      mouseControls: true,
+
+      touchControls: true,
+
+      gyroControls: false,
+
+      minHeight: 200.0,
+
+      minWidth: 200.0,
+
+      scale: 1.0,
+
+      scaleMobile: 1.0,
+
+      color: 0xffd700,
+
+      backgroundColor: 0x000000
+
     });
-</script>
+
+  </script>
+
 </body>
+
 </html>
