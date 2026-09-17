@@ -49,8 +49,6 @@ main h1 {
 }
 
 main img {
-    border: 10px solid #fff;
-    border-radius: 10%;
     height: 245px;
     display: block;
     margin: 1rem auto;

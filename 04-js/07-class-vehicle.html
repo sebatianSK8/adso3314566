@@ -53,21 +53,21 @@
       align-items: center;
       justify-content: space-between;
       height: 80px;
-      padding-left: 0;       /* ← Sin padding a la izquierda para que el logo llegue al borde */
+      padding-left: 0;
     }
 
     /* LOGO NASCAR - ALINEADO A LA IZQUIERDA */
     div.vehicle figure.logo {
       width: 250px;
-      height: 75px;
+      height: 131px;
       margin: 0;
-      margin-left: -10px;          /* ← Lo empuja un poco más a la izquierda */
+      margin-left: -10px;
       border: none;
       border-radius: 0;
       background-color: transparent;
       background-image: url("../src/imgs/vehicles/log.svg");
       background-repeat: no-repeat;
-      background-position: left center;   /* ← ¡CLAVE! Alinea el logo a la izquierda */
+      background-position: left center;
       background-size: contain;
       box-shadow: none;
       transition: filter 0.3s ease;
@@ -79,18 +79,18 @@
       background-image: url("../src/imgs/vehicles/log.svg");
       border: none;
       box-shadow: none;
-      background-position: left center;   /* ← Mantiene la alineación a la izquierda */
+      background-position: left center;
       filter: invert(1) hue-rotate(180deg);
     }
 
     /* BOTÓN MODE */
     div.vehicle button.mode {
       width: auto; padding: 0 12px; height: 43px; margin: 0; border: none; border-radius: 8px;
-      background-color: transparent; color: inherit; cursor: pointer; font-size: 14px; font-weight: 600;
+      background-color: transparent; color: inherit; cursor: pointer; font-size: 23px; font-weight: 600;
       display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.3s;
     }
     div.vehicle button.mode:hover { background-color: rgba(176, 38, 255, 0.1); }
-    .mode-icon { color: #b026ff; font-size: 20px; }
+    .mode-icon { color: #fffb18; font-size: 20px; }
     div.vehicle:not(.dark) .mode-icon { color: #ff2d95; }
 
     /* =====================================================
@@ -106,7 +106,7 @@
     div.vehicle:not(.dark) nav button { background-color: #ffffff; color: #17151d; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     div.vehicle:not(.dark) nav button:hover { background-color: #f0e6ff; color: #17151d; }
     div.vehicle:not(.dark) nav button:active { background-color: #f0e6ff; color: #17151d; }
-    .arrow { color: #b026ff; font-size: 30px; line-height: 25px; }
+    .arrow { color: #fffb18; font-size: 30px; line-height: 25px; }
     .nav-text { font-size: 11px; }
 
     /* MARCA */
@@ -120,11 +120,25 @@
     /* INFO */
     .vehicle-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
     .vehicle-info figure {
-      height: 85px; margin: 0; padding: 5px; background-color: #111018; border-radius: 8px;
+      height: 91px; margin: -3px; padding: 5px; background-color: #111018; border-radius: 8px;
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
     }
     div.vehicle:not(.dark) .vehicle-info figure { background-color: #ffffff; color: #17151d; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .vehicle-info figure img { width: 60px; height: 30px; object-fit: contain; }
+    .vehicle-info figure img { width: 60px; height: 51px; object-fit: contain; }
+
+    /* =====================================================
+       ICONOS INFO SEGÚN MODO (OSCURO / CLARO)
+    ====================================================== */
+    /* Modo OSCURO: invertimos el SVG claro → se vuelve oscuro */
+    div.vehicle.dark .vehicle-info figure img {
+      filter: invert(1);
+    }
+
+    /* Modo CLARO: dejamos el SVG tal cual (ya es claro/blanco) */
+    div.vehicle:not(.dark) .vehicle-info figure img {
+      filter: none;
+    }
+
     .info-label { color: #77727f; font-size: 13px; }
     .info-value { color: white; font-size: 13px; }
 
@@ -214,7 +228,7 @@
       background-color: #21122b;
       box-shadow: inset 0 0 0 1px #fffc54, 0 0 10px rgba(255, 252, 96, 0.25);
     }
-    .control-icon { color: #b026ff; font-size: 24px; line-height: 24px; }
+    .control-icon { color: #fff126; font-size: 24px; line-height: 24px; }
     div.vehicle:not(.dark) #on .control-icon { color: #39ff14; }
     div.vehicle:not(.dark) #forward .control-icon { color: #fff06b; }
     div.vehicle:not(.dark) #stop .control-icon { color: #ff2d95; }
@@ -274,17 +288,14 @@
         <div class="vehicle-info">
           <figure>
             <img src="../src/imgs/vehicles/Group 8.svg" alt="Model" />
-            <span class="info-label">Model</span>
             <strong class="info-value" id="model">Chevrolet</strong>
           </figure>
           <figure>
             <img src="../src/imgs/vehicles/Refer.svg" alt="Refer" />
-            <span class="info-label">Refer</span>
             <strong class="info-value" id="refer">Monte Carlo</strong>
           </figure>
           <figure>
             <img src="../src/imgs/vehicles/Color.svg" alt="Color" />
-            <span class="info-label">Color</span>
             <strong class="info-value" id="color">Yellow</strong>
           </figure>
         </div>
@@ -549,8 +560,8 @@
         lastTimestamp = timestamp;
 
         layers.forEach((layer, i) => {
-          let currentPos = (parseFloat(layer.dataset.pos) || 0) 
-                           + speedFactors[i] 
+          let currentPos = (parseFloat(layer.dataset.pos) || 0)
+                           + speedFactors[i]
                            * (isReversed ? delta : -delta);
           layer.style.backgroundPositionX = `${currentPos}px`;
           layer.dataset.pos = currentPos;
