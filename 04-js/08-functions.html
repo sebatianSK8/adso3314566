@@ -54,6 +54,7 @@
         const n1 = document.querySelector('#n1')
         const n2 = document.querySelector('#n2')
         const output = document.querySelector('output')
+        const time = document.querySelector('.time')
 
         function showGreeting() {
             greeting.textContent = '✅Hello Javascript!✅';
@@ -72,6 +73,16 @@
         n2.addEventListener('input', () => {
             showSum(n1.value, n2.value);
         })
+
+        function showTime() {
+            const ndate = new Date;
+            let hours = ndate.getHours();
+            const minutes = String(ndate.getMinutes()).padStart(2, '0');
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            return `${hours}:${minutes} ${period}`;
+        }
+        time.textContent = showTime();
         </script>
 </body>
 </html>
