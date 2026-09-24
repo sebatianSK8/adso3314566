@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/04-js.css" />
+</head>
+<style>
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+            strong,
+            output {
+                font-size: 1.6rem;
+            }
+            input {
+                border-radius: 0.4rem;
+                border: none;
+                padding: 0.4rem;
+                width: 100px;
+            }
+        }
+        h4 {
+            font-size: 1.4rem;
+            margin-block: 1.2rem;
+        }
+</style>
+<body>
+<a href="../04-js/" class="btn-home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 256 256">
+        <path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"/>
+    </svg>
+</a>
+    <section>
+            <h3>01- Function without params/args</h3>
+            <h4 class="greeting"></h4>
+            <h3>02- Function with params/args</h3>
+            <form>
+                <input type="number" id="n1" min="1" max="999" placeholder="Number 1">
+                <strong>+</strong>
+                <input type="number" id="n2" min="1" max="999" placeholder="Number 2">
+                <strong>=</strong>
+                <output></output>
+            </form>
+            <h3>03- Function return value</h3>
+            <h4 class="time"></h4>
+        </section>
+
+        <script>
+        const greeting = document.querySelector('.greeting')
+        const n1 = document.querySelector('#n1')
+        const n2 = document.querySelector('#n2')
+        const output = document.querySelector('output')
+
+        function showGreeting() {
+            greeting.textContent = '✅Hello Javascript!✅';
+        }
+        
+        showGreeting();
+
+        function showSum(n1 = 1, n2) {
+            output.textContent = parseInt(n1) + parseInt(n2);
+        }
+
+        n1.addEventListener('input', () => {
+            showSum(n1.value, n2.value);
+        })
+
+        n2.addEventListener('input', () => {
+            showSum(n1.value, n2.value);
+        })
+        </script>
+</body>
+</html>
